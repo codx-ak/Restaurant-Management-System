@@ -5,5 +5,5 @@ const MenuContext = () => {
     <div>MenuContext</div>
   )
 }
-
+ 
 export default MenuContext
