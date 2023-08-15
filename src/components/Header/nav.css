@@ -2,8 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:20px;
-    padding-bottom: 0;
+    padding:10px 30px;
+    position: static;
+    top: 0;
+    z-index: 1000;
 }
 .NavBar li{
     text-decoration: none;
@@ -14,4 +16,7 @@
 }
 .NavBar li:hover{
     color: #e52b34;
+}
+.NavBar img{
+    width: 150px;
 }

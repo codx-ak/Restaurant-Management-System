@@ -5,7 +5,7 @@ import './banner.css'
 const BookingBanner = () => {
   return (
     <Box className='BookingBanner'>
-        <Typography variant='h6'>NOW BOOKING</Typography>
+        <Typography variant='subtitle1' component='p'>NOW BOOKING</Typography>
         <Typography variant='h3'>Private Dinners & Happy Hours</Typography>
     </Box>
   )

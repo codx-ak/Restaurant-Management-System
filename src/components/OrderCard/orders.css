@@ -1,0 +1,57 @@
+.order-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 15px;
+    width: 500px;
+    margin-top: 20px;
+}
+.order-card p{
+    color: gray;
+    font-size: 14px;
+}
+.order-card  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+.order-card  h5{
+    text-align: center;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}
+
+.orders  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.orders  h5{
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}
+
+.orders{
+    min-height: 90vh;
+    margin-top: 20px;
+    background-image: url(../../assets/images/bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:contain;
+}
+.orders-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}

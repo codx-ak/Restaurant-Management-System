@@ -1,0 +1,61 @@
+.BookingPage{
+    padding: 50px 20px;  
+    background-image: url(../../assets/images/hero-slider-3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+.BookingPage  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.BookingPage  h5{
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}
+
+.BookingForm{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BookingForm form{
+    width: 450px;
+    padding: 40px;
+    border-radius:15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.BookingForm input{
+    height: 17px !important;
+    min-width: 300px;
+}
+.BookingForm button{
+    background-color: #e52b34 !important;
+    height: 45px !important;
+    width: 75%;
+}
+.BookingForm form select{
+    width: 300px;
+}
+.BookingForm img{
+    width: 47%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 5px;
+}

@@ -1,0 +1,70 @@
+.home{
+    background-image: url(../../assets/images//hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 100vw;
+    color: white;
+}
+.home .content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home .content p{
+    color: lightgray;
+}
+.home .content h2{
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    top: -25px;
+}
+.home .content h6{
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+    font-size: 40px;
+    color:#e52b34;
+    z-index: 200;
+}
+.home .content button{
+    width: 250px;
+    border-radius: 20px;
+    color: white;
+    background-color: #e52b34 !important;
+    margin-top: 50px;
+}
+
+
+
+#About {
+    padding: 50px;
+    height: 600px;
+    background-image: url(../../assets/images/about-image.jpg);
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#About h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 600;
+    width: 370px;
+    text-align: center;
+}
+#About h5{
+    
+    font-family: sans-serif;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}
+#About p{
+    color: gray;
+    text-align: center;
+    width: 370px;
+    line-height: 30px;
+}

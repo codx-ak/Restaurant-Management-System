@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box,Typography} from '@mui/material'
-import '../../assets/css/footer.css'
+import './footer.css'
 import {Link} from 'react-router-dom'
 const Footer = () => {
   return (

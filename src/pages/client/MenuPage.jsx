@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import '../../assets/css/menu.css'
 import MenuCard from '../../components/MenuCard/MenuCard'
 import { MenuData } from '../../DB/MenuData'
 

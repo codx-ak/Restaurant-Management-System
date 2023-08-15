@@ -4,7 +4,7 @@ import HomePage from '../pages/client/HomePage'
 
 const Menu =React.lazy(()=>import('../pages/client/MenuPage'))
 const Booking =React.lazy(()=>import('../pages/client/BookingPage'))
-const Manage =React.lazy(()=>import('../pages/client/ManageBooking'))
+const Orders =React.lazy(()=>import('../pages/client/Orders'))
 const Order =React.lazy(()=>import('../pages/client/Order'))
 
 const PageRoutes = () => {
@@ -15,7 +15,7 @@ const PageRoutes = () => {
       <Route path='home' element={<HomePage/>} />
       <Route path='menu' element={<Menu/>} />
       <Route path='booking' element={<Booking/>} />
-      <Route path='orders' element={<Manage/>} />
+      <Route path='orders' element={<Orders/>} />
       <Route path='orders/:id' element={<Order/>} />
     </Routes>
     </React.Suspense>
