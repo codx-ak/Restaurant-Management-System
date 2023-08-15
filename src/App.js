@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from './routes/Layout'
 
 const App = () => {
   return (
-    <div>App</div>
+    <Layout/>
   )
 }
 

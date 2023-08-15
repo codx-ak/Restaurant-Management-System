@@ -1,8 +1,27 @@
 import React from 'react'
+import './menucard.css'
+import { Card, Typography,Box } from '@mui/material'
 
-const MenuCard = () => {
+const MenuCard = ({MenuItem}) => {
   return (
-    <div>MenuCard</div>
+    <Card variant='outlined' className='Menu-Card'>
+      <Typography sx={{padding:'30px 0'}} variant='h5' component='p'>{MenuItem.Title}</Typography>
+      {
+        MenuItem.Items && MenuItem.Items.map((item,index)=>{
+          return(
+            <div key={index} className='Menu-Item'>
+            <img src={item.image} alt="" />
+            <Box sx={{width:'65%'}}>
+            <Typography variant='h6' className='Menu-Title' component='p'>{item.name}</Typography>
+            <Typography sx={{color:'gray',marginTop:1}} component='p'>{item.list}</Typography>
+            </Box>
+            <Typography sx={{color:'#e52b34',fontWeight:'bold'}} variant='h5' component='p'>${item.price}</Typography>
+            </div>
+          )
+        })
+      }
+      
+    </Card>
   )
 }
 

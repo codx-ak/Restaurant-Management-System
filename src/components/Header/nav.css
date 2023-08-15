@@ -1,0 +1,17 @@
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+    padding-bottom: 0;
+}
+.NavBar li{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.NavBar li:hover{
+    color: #e52b34;
+}

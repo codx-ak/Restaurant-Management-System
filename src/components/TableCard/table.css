@@ -1,0 +1,34 @@
+.BookingForm{
+    display: flex;
+    flex-direction:row;
+    gap: 1rem;
+    border:none;
+}
+.BookingForm form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.BookingForm input{
+    height: 15px !important;
+    width: 300px;
+}
+.BookingForm input:focus{
+    outline-color: rgba(2, 163, 163, 0.795) !important;
+}
+.BookingForm button{
+    background-color: #e52b34 !important;
+    height: 45px !important;
+    width: 320px;
+}
+.BookingForm img{
+    width: 47%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 5px;
+}

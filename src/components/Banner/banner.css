@@ -1,0 +1,13 @@
+.BookingBanner{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-image: url(../../assets/images/hotel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

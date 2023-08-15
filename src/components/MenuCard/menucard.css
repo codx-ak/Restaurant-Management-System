@@ -1,0 +1,30 @@
+.Menu-Card{
+    max-width: 350px;
+    border-style: dashed !important;
+    padding: 10px;
+    text-align: center;
+}
+.Menu-Card:hover{
+    border-color: #e52b34;
+}
+.Menu-Item{
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px dashed lightgray;
+    cursor: pointer;
+    padding: 25px;
+}
+.Menu-Item:hover{
+    border-color: #e52b34;
+}
+.Menu-Item img{
+    width: 25%;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.Menu-Item:last-child{
+    border: none;
+}
+.Menu-Item:hover .Menu-Title{
+    color: #e52b34;
+}

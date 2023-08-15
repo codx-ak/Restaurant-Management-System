@@ -1,0 +1,25 @@
+.BookingCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 15px;
+    width: 500px;
+    margin-top: 20px;
+}
+.BookingCard p{
+    color: gray;
+}
+.BookingCard  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+.BookingCard  h5{
+    text-align: center;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}

@@ -1,8 +1,17 @@
 import React from 'react'
+import Home from '../../components/Home/Home'
+import AboutPage from './AboutPage'
+import BookingBanner from '../../components/Banner/BookingBanner'
+import MenuPage from './MenuPage'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+    <Home/>
+    <AboutPage/>
+    <BookingBanner/>
+    <MenuPage/>
+    </>
   )
 }
 

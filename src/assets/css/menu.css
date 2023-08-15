@@ -1,0 +1,23 @@
+#Menu  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+#Menu h5{
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    top: -27px;
+    font-weight: bold;
+}
+#Menu .menu-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+#Menu{
+    margin: 20px 0;
+}

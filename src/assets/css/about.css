@@ -1,0 +1,28 @@
+#About{
+    padding: 50px;
+    height: 500px;
+}
+#About .content {
+    background-image: url(../images/8260901.jpg);
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#About .content h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 400;
+}
+#About .content h5{
+    width:200px;
+    position: relative;
+    top: -30px;
+    font-weight: bold;
+}
+#About .content p{
+    color: gray;
+    text-align: justify;
+    width: 450px;
+    line-height: 30px;
+}
