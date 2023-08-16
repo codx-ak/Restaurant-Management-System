@@ -1,0 +1,30 @@
+.spinner{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.spinner .item{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 3px solid blue;
+    transition: all 1s ease-in-out;
+    animation: spin 1s infinite ;
+}
+
+@keyframes spin{
+    0%{
+        border-color: green;
+    }
+    50%{
+        border-color: red;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-color: yellow;
+    }
+}

@@ -37,19 +37,30 @@ const TableCard = () => {
         {...register('checkin',{required:"Check-in Field Required"})} onFocus={(e)=>e.target.type='date'}
         type='text' autoComplete='true'  error={errors.checkin ? true :false} label="Check-In" color="success" variant="outlined" />
 
-        <TextField 
-        {...register('time',{required:"Time Field Required"})} onFocus={(e)=>e.target.type='time'}
-        type='text' autoComplete='true' label="Time" error={errors.time ? true :false} color="success" variant="outlined" />
-
-       
+        <FormControl sx={{width:'330px'}}>
+        <InputLabel color='success' id="time-label">Time</InputLabel>
+        <Select
+        {...register('time',{required:"time Field Required"})} 
+          labelId="time-label"
+          label="Time"
+          error={errors.time ? true :false} 
+          color="success"
+          >
+          <MenuItem value='8 AM - 10 AM'>08 AM - 10 AM</MenuItem>
+          <MenuItem value='10 AM - 12 PM'>10 AM - 12 PM</MenuItem>
+          <MenuItem value='12 PM - 2 PM'>12 PM - 02 PM</MenuItem>
+          <MenuItem value='2 PM - 4 PM'>02 PM - 04 PM</MenuItem>
+          <MenuItem value='4 PM - 6 PM'>04 PM - 06 PM</MenuItem>
+          <MenuItem value='6 PM - 8 PM'>06 PM - 08 PM</MenuItem>
+        </Select>
+        </FormControl>
 
         <FormControl sx={{width:'330px'}}>
-        <InputLabel color='success' id="guest-label">Age</InputLabel>
+        <InputLabel color='success' id="guest-label">Guest</InputLabel>
         <Select
         {...register('guest',{required:"guest Field Required"})} 
           labelId="guest-label"
           label="Guest"
-          value='1'
           error={errors.guest ? true :false} 
           color="success"
           >
@@ -61,6 +72,7 @@ const TableCard = () => {
 
         </Select>
         </FormControl>
+
         <Button type='submit' variant="contained">Book Table Now</Button>
 
       </form>   

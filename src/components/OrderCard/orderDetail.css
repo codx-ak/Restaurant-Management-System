@@ -1,0 +1,50 @@
+.OrderDetail{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets//images/slider.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding:50px;
+}
+
+.detail-card{
+    width: 400px;
+    border-radius: 15px;
+    height: 500px;
+    padding: 20px;
+    margin-top: 30px;
+}
+.detail-card p{
+    color: gray;
+    padding:10px 5px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.822);
+}
+
+.detail-card li{
+    text-decoration: none !important;
+    display: inline-block;
+    background-color: rgba(211, 211, 211, 0.527);
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: #e52b34a6;
+    margin:10px 5px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+.OrderDetail  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.OrderDetail h5{
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+    color: white;
+}

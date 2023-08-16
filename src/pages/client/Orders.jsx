@@ -11,7 +11,7 @@ const ManageBooking = () => {
       <Box className='orders-container'>
       {
         OrdersData.length ? OrdersData.map((order,index)=><OrderCard key={index} order={order}/>) 
-        :<Typography sx={{textAlign:'center',color:'lightgray',fontSize:'30px',padding:'40px 0'}} component='p'> No Orders</Typography>
+        :<Typography sx={{textAlign:'center',color:'lightgray',fontSize:'30px',padding:'40px 0'}} component='p'> No Bookings Found</Typography>
       }
       </Box>
     </Box>

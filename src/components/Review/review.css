@@ -1,0 +1,47 @@
+.contact .card{
+    border-radius: 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-flow: column;
+    gap:40px;
+    width:450px;
+    padding:20px;
+}
+.contact input{
+    width: 350px;
+}
+.contact form p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contact{
+    margin-bottom: 5%;
+}
+
+
+.ReviewPage  h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.ReviewPage  h5{
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+    color: white;
+}
+.ReviewPage{
+    width: 100vw;
+    height: 90vh;
+    padding: 30px;
+    background-image: url(../../assets/images/hero.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -52,3 +52,50 @@
 .Menu-Item:hover .Menu-Title{
     color: #e52b34;
 }
+#Menu button{
+    width: 200px;
+}
+
+.MenuSingleCard{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 20px;
+    position: relative;
+}
+.MenuSingleCard img{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    object-fit: contain;
+}
+.MenuSingleCard p{
+    color: gray;
+    font-size: 14px;
+}
+.MenuSingleCard .card-price{
+   position: absolute;
+   top: 0;
+   right: 0;
+   color: white;
+   padding: 10px;
+   z-index: 5;
+}
+.card-price::after{
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    background-color: #e52b34;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    border-radius:50%;
+}
+.MenuSingleContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}

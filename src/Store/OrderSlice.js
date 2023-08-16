@@ -1,7 +1,19 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const initialState={
-    value:[]
+    value:[{
+        id:1,
+                Order:"adg",
+                Table:24,
+                name:'Ak',
+                email:'fhgh',
+                mobile:'2345',
+                checkIn:'56/14/3',
+                time:'3-3',
+                guest:2,
+                booked:'3/5/6',
+                status:'Table Reservered'
+    }]
 }
 
 const OrderSlice=createSlice({
@@ -23,10 +35,10 @@ const OrderSlice=createSlice({
                 time:action.payload.time,
                 guest:action.payload.guest,
                 booked:today,
-                status:'Table Reservered',
-                menu:[]
+                status:'Table Reservered'
             }
             state.value.push(OrderModel)
+            
             alert("Order Placed")
         },
 
