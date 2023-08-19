@@ -1,0 +1,38 @@
+.Table-page  h6,.Table-Detail h6{
+    font-family: "Dancing Script", cursive;
+    color: #e52b34;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.Table-page  h5,.Table-Detail h5{
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}
+.Table-Detail{
+    height: 85vh;
+    background-image: url(../../assets/images/table.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:80%;
+    background-position-y: 100px;
+    padding: 20px;
+}
+.table-detail-card{
+    border-radius: 15px;
+    padding: 30px;
+    width: 250px;
+}
+.table-detail-card button{
+    width: 250px;
+    margin: 5px;
+    margin-top: 10px;
+}
+.Table-Detail p{
+    color: gray;
+    padding: 10px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.726);
+}

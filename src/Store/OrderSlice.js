@@ -1,18 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {Table} from '../DB/Table'
 
 const initialState={
     value:[{
         id:1,
-                Order:"adg",
-                Table:24,
-                name:'Ak',
-                email:'fhgh',
-                mobile:'2345',
-                checkIn:'56/14/3',
-                time:'3-3',
-                guest:2,
-                booked:'3/5/6',
-                status:'Table Reservered'
+        name:'Ak',
     }]
 }
 
@@ -27,7 +19,7 @@ const OrderSlice=createSlice({
             const OrderModel={
                 id:state.value.length+1,
                 Order:orderId,
-                Table:24,
+                Table:action.payload.table,
                 name:action.payload.name,
                 email:action.payload.email,
                 mobile:action.payload.mobile,
@@ -35,28 +27,59 @@ const OrderSlice=createSlice({
                 time:action.payload.time,
                 guest:action.payload.guest,
                 booked:today,
-                status:'Table Reservered'
+                status:'Table Booked'
             }
             state.value.push(OrderModel)
+            localStorage.setItem("table",JSON.stringify(OrderModel))
+            TableUpdate(OrderModel)
             
-            alert("Order Placed")
         },
 
         RemoveOrder:(state,action)=>{
             let ProductIndex=null
+            let TableId=null
             state.value.find((data,index)=>{
-                if(action.payload.id == data.id){
+                if(action.payload.id == data.Table){
                     ProductIndex=index
+                    TableId=data.Table
                 }
             })
             state.value.splice(ProductIndex,1)
-                alert("Order Removed ")
-            
-            
-               
+            localStorage.removeItem("table")
+            TableClear(TableId)
         }
-
+        
 }})
+
+const TableUpdate=(data)=>{
+    let tableIndex=null;
+    Table.find((table,index)=>{
+        if(table.tableNo==data.Table){
+            tableIndex=index;
+        }
+    })
+    Table[tableIndex].status="Booked",
+    Table[tableIndex].reservation={
+                name:data.name,
+                email:data.email,
+                checkIn:data.checkin,
+                time:data.time,
+                guest:data.guest
+            }
+    
+    console.log(Table[tableIndex])
+}
+
+const TableClear=(data)=>{
+    Table.find((table,index)=>{
+        if(table.tableNo==data){
+            Table[index].status="Available",
+            Table[index].reservation={}
+        }
+    })
+
+}
+
 
 export const {AddOrder,RemoveOrder}=OrderSlice.actions
 export default OrderSlice.reducer

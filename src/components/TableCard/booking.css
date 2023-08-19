@@ -59,3 +59,20 @@
     border-radius: 20px;
     padding: 5px;
 }
+
+.success-card{
+    padding: 20px;
+    width:50%;
+    border-radius: 15px;
+}
+.success-card p{
+    color: gray;
+    padding: 12px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.692);
+}
+.success-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}

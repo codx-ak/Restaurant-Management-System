@@ -1,10 +1,11 @@
 .OrderDetail{
     width: 100vw;
     height: 100vh;
-    background-image: url(../../assets//images/slider.jpg);
+    background-image: url(../../assets//images/order.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: contain;
+    background-position: 80%;
+    background-position-y: 100px;
     padding:50px;
 }
 
@@ -46,5 +47,4 @@
     position: relative;
     top: -25px;
     font-weight: bold;
-    color: white;
 }

@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form'
 import { Button,FormControl,InputLabel,MenuItem,Select,TextField} from '@mui/material'
 import './booking.css'
 import { useDispatch } from 'react-redux'
-import { AddOrder } from '../../Store/OrderSlice'
+import { Table } from '../../DB/Table'
+import { BookingPost } from '../../API/TableBooking'
+import { useNavigate } from 'react-router-dom';
 
 const TableCard = () => {
+  const [Tables,setTables]=useState([])
+  const navigate=useNavigate()
   const dispatch=useDispatch()
-  const {register,handleSubmit,formState:{errors}}=useForm()
+  const {register,handleSubmit,watch,formState:{errors}}=useForm()
+
   const onSubmit=(data)=>{
-   dispatch(AddOrder(data))
+    dispatch(BookingPost(data))
+    navigate('success')
   }
+
+  const GuestCount=watch('guest') || 0
+  
+  useEffect(()=>{
+    const Result=Table.filter(table=>{
+    if(table.status=='Available'){
+      return table.seatingCapacity >= GuestCount
+    }
+  })
+  setTables(Result)
+  },[GuestCount])
+
   return (
     <div className="BookingForm">
       <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
@@ -45,7 +63,9 @@ const TableCard = () => {
           label="Time"
           error={errors.time ? true :false} 
           color="success"
+          defaultValue=''
           >
+            <MenuItem value=''></MenuItem>
           <MenuItem value='8 AM - 10 AM'>08 AM - 10 AM</MenuItem>
           <MenuItem value='10 AM - 12 PM'>10 AM - 12 PM</MenuItem>
           <MenuItem value='12 PM - 2 PM'>12 PM - 02 PM</MenuItem>
@@ -63,13 +83,32 @@ const TableCard = () => {
           label="Guest"
           error={errors.guest ? true :false} 
           color="success"
+          defaultValue=''
           >
+          <MenuItem value=''></MenuItem>
           <MenuItem value='1'>1 Person</MenuItem>
           <MenuItem value='2'>2 Person</MenuItem>
           <MenuItem value='3'>3 Person</MenuItem>
           <MenuItem value='4'>4 Person</MenuItem>
           <MenuItem value='5'>5 Person</MenuItem>
 
+        </Select>
+        </FormControl>
+
+        <FormControl sx={{width:'330px'}}>
+        <InputLabel color='success' id="table-label">Table</InputLabel>
+        <Select
+        {...register('table',{required:"Table Field Required"})} 
+          labelId="table-label"
+          label="Table"
+          error={errors.table ? true :false} 
+          color="success"
+          defaultValue=''
+          >
+            <MenuItem value=''></MenuItem>
+            {
+              Tables.length && Tables.map((table,index)=><MenuItem key={index} value={table.tableNo}>{table.tableNo}</MenuItem>)
+            }
         </Select>
         </FormControl>
 

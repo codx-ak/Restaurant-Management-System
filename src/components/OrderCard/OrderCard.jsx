@@ -4,11 +4,13 @@ import './orders.css'
 import { Link } from 'react-router-dom'
 import {Clear } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
-import { RemoveOrder } from '../../Store/OrderSlice'
-import { useNavigate } from 'react-router-dom'
+import { BookingDelete } from '../../API/TableBooking'
+
 const OrderCard = ({order}) => {
-  const navigate=useNavigate()
   const dispatch=useDispatch()
+  const onSubmit=(data)=>{
+    dispatch(BookingDelete(data))
+  }
     return (
     <Card variant='outlined' className='order-card'>
         <Box>
@@ -19,7 +21,7 @@ const OrderCard = ({order}) => {
         <Link to={`${order.id}`}>
         <Button color='secondary' variant='outlined'>view Table</Button>
         </Link>
-        <IconButton onClick={()=>dispatch(RemoveOrder({id:order.id}))} size='small'><Clear/></IconButton> 
+        <IconButton onClick={()=>onSubmit(order.Order)} size='small'><Clear/></IconButton> 
     </Card>
   )
 }
