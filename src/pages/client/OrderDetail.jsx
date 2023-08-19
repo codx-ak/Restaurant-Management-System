@@ -1,15 +1,20 @@
-import { Box, Button, Card, Container, Typography } from '@mui/material'
+import { Box, Button, Card,Typography } from '@mui/material'
 import React from 'react'
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import { useSelector } from 'react-redux';
 import '../../components/OrderCard/orderDetail.css'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { RemoveOrder } from '../../Store/OrderSlice';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import { BookingDelete } from '../../API/TableBooking';
 
 const OrderDetail = () => {
   const dispatch=useDispatch()
+  const navigate=useNavigate()
+  const onSubmit=(data)=>{
+    dispatch(BookingDelete(data))
+    navigate('/home')
+  }
   let { id } = useParams();
   const Data=useSelector(state=>state.OrderStore.value)
   const FilteredData=Data.filter(order=>order.id == id)
@@ -36,7 +41,7 @@ const OrderDetail = () => {
               <Link to='/feedback'>
               <Button variant='text' startIcon={<ThumbUpAltIcon/>}>FeedBack</Button>
               </Link>
-               <Button onClick={()=>dispatch(RemoveOrder({id:data.id}))} color='error' type='button' variant='contained'>Cancel Booking</Button>
+               <Button onClick={()=>onSubmit(data.Table)} color='error' type='button' variant='contained'>Cancel Booking</Button>
               </Box>
               
             </Card>

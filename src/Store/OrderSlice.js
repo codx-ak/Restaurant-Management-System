@@ -2,10 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 import {Table} from '../DB/Table'
 
 const initialState={
-    value:[{
-        id:1,
-        name:'Ak',
-    }]
+    value:[]
 }
 
 const OrderSlice=createSlice({
@@ -37,16 +34,14 @@ const OrderSlice=createSlice({
 
         RemoveOrder:(state,action)=>{
             let ProductIndex=null
-            let TableId=null
             state.value.find((data,index)=>{
-                if(action.payload.id == data.Table){
+                if(action.payload.Table == data.Table){
                     ProductIndex=index
-                    TableId=data.Table
+                    localStorage.clear()
+                    TableClear(action.payload.Table)
                 }
             })
             state.value.splice(ProductIndex,1)
-            localStorage.removeItem("table")
-            TableClear(TableId)
         }
         
 }})
@@ -58,7 +53,7 @@ const TableUpdate=(data)=>{
             tableIndex=index;
         }
     })
-    Table[tableIndex].status="Booked",
+    Table[tableIndex].status="Booked"
     Table[tableIndex].reservation={
                 name:data.name,
                 email:data.email,
@@ -67,16 +62,17 @@ const TableUpdate=(data)=>{
                 guest:data.guest
             }
     
-    console.log(Table[tableIndex])
 }
 
 const TableClear=(data)=>{
+    let tableIndex=null;
     Table.find((table,index)=>{
         if(table.tableNo==data){
-            Table[index].status="Available",
-            Table[index].reservation={}
+            tableIndex=index;
         }
     })
+    Table[tableIndex].status="Available"
+    Table[tableIndex].reservation={}
 
 }
 

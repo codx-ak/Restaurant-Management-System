@@ -21,7 +21,7 @@ const OrderCard = ({order}) => {
         <Link to={`${order.id}`}>
         <Button color='secondary' variant='outlined'>view Table</Button>
         </Link>
-        <IconButton onClick={()=>onSubmit(order.Order)} size='small'><Clear/></IconButton> 
+        <IconButton onClick={()=>onSubmit(order.Table)} size='small'><Clear/></IconButton> 
     </Card>
   )
 }
