@@ -4,12 +4,16 @@ body {
   font-family:'Roboto';
   overflow-x: hidden;
 }
+html{
+  overflow-x: hidden;
+}
 
 img{
   object-fit: cover;
   overflow: hidden;
 }
 
+/* Headings */
 .first-title{
   font-family: "Dancing Script", cursive !important;
   color: #e52b34;
@@ -23,4 +27,97 @@ img{
   position: relative;
   top: -25px;
   font-weight: bold !important;
+}
+
+
+/* Small devices (mobile Screens, 430px) */
+@media only screen and (max-width: 430px) {
+  .home{
+    height: 50vh;
+  }
+  .home .content h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  #About{
+    color: white;
+  }
+  #About p {
+    color: white !important;
+  }
+  .footer a {
+    display: block;
+  }
+  .MenuSingleContainer {
+    justify-content: center;
+}
+.table-detail-card {
+  width: 82%;
+}
+.Table-Detail {
+  height: 550px;
+}
+.orders {
+  min-height: 100% !important;
+  background-size: auto;
+}
+.ReviewPage {
+  flex-direction: column-reverse;
+}
+.contact .card {
+  width: auto;
+}
+.review-item:nth-child(2n) {
+  margin-left: 0 !important;
+}
+.Reviews-items {
+  flex-direction: row !important;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory auto;
+}
+.review-item {
+  min-width: 300px;
+}
+.success-page {
+  margin: 0;
+}
+.success-card {
+  width: auto !important;
+}
+.order-card {
+  width: auto;
+}
+.OrderDetail {
+  width: auto;
+  height: auto;
+  background-image: none;
+  padding: 10px;
+}
+.detail-card {
+  width: auto !important;
+}
+}
+
+/* Large devices (tablets, 900px ) */
+@media only screen and (max-width: 900px) {
+  .home .content h2 {
+    font-size: 30px !important;
+}
+.ReviewPage {
+  flex-flow: column-reverse;
+}
+.Reviews-items {
+  flex-direction: row !important;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+}
+.review-item {
+  min-width: 300px;
+}
+.review-item:nth-child(2n) {
+  margin-left: 0 !important;
+}
+
 }

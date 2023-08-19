@@ -30,7 +30,7 @@ const ReviewCard = () => {
       <TextField {...register("email",{required:"Enter Email"})} autoComplete='true' error={errors.Email?true:false} variant='standard'  label="Email" type='email'/>
       <Typography component='p' sx={{alignSelf:'start',paddingLeft:'10%'}}> <span>Rating :</span> <Rating onChange={e=>setRating(e.target.value)} precision={0.5}/></Typography>
       <input {...register("rating",{required:"Enter rating"})} value={rating} type="hidden" name="" />
-      <TextField {...register("message",{required:"Enter message"})} multiline sx={{width:'350px',height:'150px'}}
+      <TextField {...register("message",{required:"Enter message"})} multiline sx={{width:'320px',height:'150px'}}
           maxRows={4} error={errors.message?true:false} variant='standard'  label="Message" type='text'/>
       
       <Box sx={{width:"100%",display:'flex',justifyContent:"space-around",alignItems:"center"}}>

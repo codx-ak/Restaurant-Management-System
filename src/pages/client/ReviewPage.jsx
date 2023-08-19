@@ -10,7 +10,7 @@ const ReviewPage = () => {
       <Typography className='first-title' variant='h6'>Review</Typography>
       <Typography className='second-title' variant='h4'>Savor, Share, Shape Our Taste</Typography>
       <Container className='ReviewPage'>
-        <Box>
+        <Box className='Reviews-items'> 
           {
             //Reviews data mapping
             ReviewDB.length ? ReviewDB.map((data,index)=>{

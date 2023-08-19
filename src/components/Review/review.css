@@ -48,3 +48,11 @@
 .review-item:nth-child(2n){
     margin-left: 50px;
 }
+
+.Reviews-items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}

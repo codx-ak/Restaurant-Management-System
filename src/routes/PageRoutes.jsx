@@ -12,6 +12,7 @@ const Review =React.lazy(()=>import('../pages/client/ReviewPage'))
 const Success =React.lazy(()=>import('../pages/client/ConfirmPage'))
 const Table =React.lazy(()=>import('../pages/client/TablePage'))
 const TableDetail =React.lazy(()=>import('../pages/client/TableDetail'))
+const ManageTable =React.lazy(()=>import('../pages/admin/ManageTable'))
 
 const PageRoutes = () => {
   return (
@@ -27,6 +28,7 @@ const PageRoutes = () => {
       <Route path='table-overview/:id' element={<TableDetail/>} />
       <Route path='feedback' element={<Review/>} />
       <Route path='orders/:id' element={<OrderDetail/>} />
+      <Route path='admin' element={<ManageTable/>} />
     </Routes>
     </React.Suspense>
   )
