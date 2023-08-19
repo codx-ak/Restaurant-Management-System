@@ -5,11 +5,11 @@
     align-items:center;
     flex-flow: column;
     gap:40px;
-    width:450px;
+    width:400px;
     padding:20px;
 }
 .contact input{
-    width: 350px;
+    width: 320px;
 }
 .contact form p{
     display: flex;
@@ -21,11 +21,30 @@
 }
 
 .ReviewPage{
-    width: 100vw;
-    height: 90vh;
-    padding: 30px;
-    background-image: url(../../assets/images/hero.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+.review-item{
+    width: 300px;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color:rgba(173, 216, 230, 0.116) ;
+}
+.review-item img{
+    width:80px;
+}
+.review-item p{
+    color: gray;
+    font-size: 14px;
+    width: 180px;
+    text-align: justify;
+}
+.review-item:nth-child(2n){
+    margin-left: 50px;
 }
