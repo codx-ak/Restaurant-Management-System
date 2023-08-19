@@ -20,8 +20,8 @@ const OrderDetail = () => {
   const FilteredData=Data.filter(order=>order.id == id)
   return (
     <Box className='OrderDetail' >
-      <Typography component='h6' variant='h6'>Summary</Typography>
-      <Typography component='h5' variant='h4'>Discover Our Flavorful Symphony!</Typography>
+      <Typography className='first-title' variant='h6'>Summary</Typography>
+      <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
       {
         Data.length? FilteredData.map(data=>{
           return(

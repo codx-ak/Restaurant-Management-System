@@ -20,22 +20,6 @@
     margin-bottom: 5%;
 }
 
-
-.ReviewPage  h6{
-    font-family: "Dancing Script", cursive;
-    color: #e52b34;
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-}
-.ReviewPage  h5{
-    text-align: center;
-    font-family: sans-serif;
-    position: relative;
-    top: -25px;
-    font-weight: bold;
-    color: white;
-}
 .ReviewPage{
     width: 100vw;
     height: 90vh;

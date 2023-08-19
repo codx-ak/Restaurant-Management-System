@@ -9,3 +9,18 @@ img{
   object-fit: cover;
   overflow: hidden;
 }
+
+.first-title{
+  font-family: "Dancing Script", cursive !important;
+  color: #e52b34;
+  font-size: 40px !important;
+  font-weight: 600 !important;
+  text-align: center;
+}
+.second-title{
+  text-align: center;
+  font-family: sans-serif !important;
+  position: relative;
+  top: -25px;
+  font-weight: bold !important;
+}

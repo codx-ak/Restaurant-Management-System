@@ -34,17 +34,3 @@
     font-weight: 500;
     font-family: sans-serif;
 }
-.OrderDetail  h6{
-    font-family: "Dancing Script", cursive;
-    color: #e52b34;
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-}
-.OrderDetail h5{
-    font-family: sans-serif;
-    text-align: center;
-    position: relative;
-    top: -25px;
-    font-weight: bold;
-}

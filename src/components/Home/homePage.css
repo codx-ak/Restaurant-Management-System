@@ -47,21 +47,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-#About h6{
-    font-family: "Dancing Script", cursive;
-    color: #e52b34;
-    font-size: 40px;
-    font-weight: 600;
-    width: 370px;
-    text-align: center;
-}
-#About h5{
-    
-    font-family: sans-serif;
-    position: relative;
-    top: -25px;
-    font-weight: bold;
-}
+
 #About p{
     color: gray;
     text-align: center;

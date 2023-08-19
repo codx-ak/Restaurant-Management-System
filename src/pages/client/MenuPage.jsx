@@ -6,8 +6,8 @@ import { Menu } from '../../DB/Menu'
 const MenuPage = () => {
   return (
     <Box id='Menu'>
-      <Typography component='h6' variant='h6'>Menu</Typography>
-      <Typography component='h5' variant='h4'>Discover Our Flavorful Symphony!</Typography>
+      <Typography className='first-title' variant='h6'>Menu</Typography>
+      <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
       {
         Menu.length ? Menu.map((item,index)=>{
         return(

@@ -6,8 +6,8 @@ const ManageBooking = () => {
   const OrdersData=useSelector(state=>state.OrderStore.value)
   return (
     <Box className='orders'>
-      <Typography component='h6' variant='h6'>Orders</Typography>
-      <Typography component='h5' variant='h4'>Your Journey to Flavor Begins Here!</Typography>
+      <Typography className='first-title' variant='h6'>Orders</Typography>
+      <Typography className='second-title' variant='h4'>Your Journey to Flavor Begins Here!</Typography>
       <Box className='orders-container'>
       {
         OrdersData.length ? OrdersData.map((order,index)=><OrderCard key={index} order={order}/>) 

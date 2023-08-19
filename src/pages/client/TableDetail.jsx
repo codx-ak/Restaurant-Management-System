@@ -10,8 +10,8 @@ const TableDetail = () => {
     const FilteredData=Table.filter(table=>table.tableNo == id)
   return (
     <Container className='Table-Detail'>
-        <Typography component='h6' variant='h6'>Table</Typography>
-        <Typography component='h5' variant='h4'>Discover Our Flavorful Symphony!</Typography>
+        <Typography className='first-title' variant='h6'>Table</Typography>
+        <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
         {
             FilteredData.length ? FilteredData.map((table,index)=>{
                 return (

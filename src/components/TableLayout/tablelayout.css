@@ -1,17 +1,3 @@
-.Table-page  h6,.Table-Detail h6{
-    font-family: "Dancing Script", cursive;
-    color: #e52b34;
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-}
-.Table-page  h5,.Table-Detail h5{
-    text-align: center;
-    font-family: sans-serif;
-    position: relative;
-    top: -25px;
-    font-weight: bold;
-}
 .Table-Detail{
     height: 85vh;
     background-image: url(../../assets/images/table.jpg);

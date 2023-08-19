@@ -11,34 +11,6 @@
     color: gray;
     font-size: 14px;
 }
-.order-card  h6{
-    font-family: "Dancing Script", cursive;
-    color: #e52b34;
-    font-size: 40px;
-    font-weight: 400;
-    text-align: center;
-}
-.order-card  h5{
-    text-align: center;
-    position: relative;
-    top: -25px;
-    font-weight: bold;
-}
-
-.orders  h6{
-    font-family: "Dancing Script", cursive;
-    color: #e52b34;
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-}
-.orders  h5{
-    text-align: center;
-    font-family: sans-serif;
-    position: relative;
-    top: -25px;
-    font-weight: bold;
-}
 
 .orders{
     min-height: 90vh;
