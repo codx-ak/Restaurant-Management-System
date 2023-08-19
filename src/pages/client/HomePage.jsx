@@ -11,8 +11,10 @@ const HomePage = () => {
     <div className='home'>
     <Home/>
     </div>
+    {/* About Page */}
     <About/>
     <BookingBanner/>
+    {/* Home Page Menu */}
     <Menu/>
     </>
   )

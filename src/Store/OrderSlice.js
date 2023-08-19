@@ -10,8 +10,10 @@ const OrderSlice=createSlice({
     initialState:initialState,
     reducers:{
 
+        // Table Booking Reducer
         AddOrder:(state,action)=>{
             let today = new Date().toISOString().slice(0, 10)
+            // Order ID Generate
             var orderId = "Ak" + Math.random().toString(16).slice(2)
             const OrderModel={
                 id:state.value.length+1,
@@ -27,17 +29,22 @@ const OrderSlice=createSlice({
                 status:'Table Booked'
             }
             state.value.push(OrderModel)
+            // store local storage
             localStorage.setItem("table",JSON.stringify(OrderModel))
+            //Update the Table Storage Function
             TableUpdate(OrderModel)
             
         },
 
+        // Table Booking Cancel  Reducer
         RemoveOrder:(state,action)=>{
             let ProductIndex=null
             state.value.find((data,index)=>{
                 if(action.payload.Table == data.Table){
                     ProductIndex=index
+                    //crear Stored Booked Data in local Storage
                     localStorage.clear()
+                    // Updated the Table Storage
                     TableClear(action.payload.Table)
                 }
             })
@@ -45,6 +52,8 @@ const OrderSlice=createSlice({
         }
         
 }})
+
+// Table Update Functions 
 
 const TableUpdate=(data)=>{
     let tableIndex=null;

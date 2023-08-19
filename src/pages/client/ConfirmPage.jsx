@@ -8,6 +8,7 @@ const ConfirmPage = () => {
     const [Order,setOrder]=useState()
 
     useEffect(()=>{
+      //Local Storage to Get the Booking Details 
         const Result=localStorage.getItem("table")
         setOrder(JSON.parse(Result))
     },[localStorage])

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from '../pages/client/HomePage'
 import Loader from '../components/Loading/Loading'
 
+// Lasy load to import the Pages
 const Menu =React.lazy(()=>import('../pages/client/MenuPage'))
 const Booking =React.lazy(()=>import('../pages/client/BookingPage'))
 const Orders =React.lazy(()=>import('../pages/client/Orders'))

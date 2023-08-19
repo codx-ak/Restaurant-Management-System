@@ -9,6 +9,7 @@ import { BookingDelete } from '../../API/TableBooking'
 const OrderCard = ({order}) => {
   const dispatch=useDispatch()
   const onSubmit=(data)=>{
+    // Booked Table Cancel With Api
     dispatch(BookingDelete(data))
   }
     return (

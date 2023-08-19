@@ -9,6 +9,7 @@ const MenuPage = () => {
       <Typography className='first-title' variant='h6'>Menu</Typography>
       <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
       {
+        // Home Page Menu Mapping
         Menu.length ? Menu.map((item,index)=>{
         return(
           <Container  key={index} sx={{padding:2}}>

@@ -6,13 +6,16 @@ import { Table } from '../../DB/Table';
 import '../../components/TableLayout/tablelayout.css'
 
 const TableDetail = () => {
+    // url to getting Table Id
     let { id } = useParams();
+    //Taable Id to filter Data with DB
     const FilteredData=Table.filter(table=>table.tableNo == id)
   return (
     <Container className='Table-Detail'>
         <Typography className='first-title' variant='h6'>Table</Typography>
         <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
         {
+            // Filterd Data Mapping
             FilteredData.length ? FilteredData.map((table,index)=>{
                 return (
                     <Card variant='outlined' className='table-detail-card'>
@@ -22,6 +25,7 @@ const TableDetail = () => {
                         <Typography component='p'>Status : {table.status}</Typography>
                         <Typography component='p'>Reservation : {table.reservation.name || "Not Booked"}</Typography>
                         {
+                            // checking Table is available or booked 
                             table.status=="Available" && <Typography component='div'><Link to='/booking'>
                                 <Button color='error' variant='outlined'>Book Now</Button>
                                 </Link></Typography>

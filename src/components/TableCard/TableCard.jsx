@@ -14,13 +14,16 @@ const TableCard = () => {
   const {register,handleSubmit,watch,formState:{errors}}=useForm()
 
   const onSubmit=(data)=>{
+    //calling Table Booking Reducer
     dispatch(BookingPost(data))
+    //navigate confirmation page
     navigate('success')
   }
 
   const GuestCount=watch('guest') || 0
   
   useEffect(()=>{
+    //updating Tables 
     const Result=Table.filter(table=>{
     if(table.status=='Available'){
       return table.seatingCapacity >= GuestCount

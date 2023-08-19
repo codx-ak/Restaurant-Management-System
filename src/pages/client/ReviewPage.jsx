@@ -12,11 +12,13 @@ const ReviewPage = () => {
       <Container className='ReviewPage'>
         <Box>
           {
+            //Reviews data mapping
             ReviewDB.length ? ReviewDB.map((data,index)=>{
               return(<Reviews key={index} Data={data}/>)
             }) : ''
           }
         </Box>
+        {/* Review Form  */}
       <ReviewCard/>
       </Container>
     </Box>

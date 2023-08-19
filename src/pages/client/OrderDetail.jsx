@@ -9,12 +9,17 @@ import { BookingDelete } from '../../API/TableBooking';
 const OrderDetail = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
+
   const onSubmit=(data)=>{
+    //axios to delete the Booked Table
     dispatch(BookingDelete(data))
+    //navigate to home
     navigate('/home')
   }
+  //url param to get Order Id
   let { id } = useParams();
   const Data=useSelector(state=>state.OrderStore.value)
+  // Order ID to filter the data in DB
   const FilteredData=Data.filter(order=>order.id == id)
   return (
     <Box className='OrderDetail' >

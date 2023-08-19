@@ -11,6 +11,7 @@ const Menu = () => {
     <Typography className='second-title' variant='h4'>Our Menu</Typography>
     <Box className="menu-container">
     {
+      // Home Page Menu Mapping
       MenuData.length ? MenuData.map((item,index)=><MenuCard key={index} MenuItem={item}/>) : <Typography component='p'> No Items</Typography>
     }
     </Box>

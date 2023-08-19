@@ -7,6 +7,7 @@ const MenuCard = ({MenuItem}) => {
     <Card variant='outlined' className='Menu-Card'>
       <Typography sx={{padding:'30px 0'}} variant='h5' component='p'>{MenuItem.section_name}</Typography>
       {
+        //Home Page Menu Card 
         MenuItem.items && MenuItem.items.map((item,index)=>{
           return(
             <div key={index} className='Menu-Item'>

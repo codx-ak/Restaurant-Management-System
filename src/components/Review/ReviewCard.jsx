@@ -11,11 +11,14 @@ const ReviewCard = () => {
   const navigate=useNavigate()
   const {register,handleSubmit,watch,setValue,formState:{errors}}=useForm()
   useEffect(()=>{
+    //setting rating value in form
     setValue('rating',rating)
   },[rating])
   
   const onSubmit=(data)=>{
+    //review post method
     ReviewPost(data)
+    //navigate to home
     navigate('/home')
     }
   return (
