@@ -3,9 +3,7 @@ import React from 'react'
 import {useNavigate, useParams} from "react-router-dom";
 import { useSelector } from 'react-redux';
 import '../../components/OrderCard/orderDetail.css'
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import { BookingDelete } from '../../API/TableBooking';
 
 const OrderDetail = () => {
@@ -37,10 +35,7 @@ const OrderDetail = () => {
               <Typography component='p'>Guest : {data.guest}</Typography>
               <Typography component='p'>Booked : {data.booked}</Typography>
               <Typography component='p'>Status : {data.status}</Typography>
-              <Box sx={{display:'flex',alignItems:'center',padding:1,justifyContent:'space-around'}}>
-              <Link to='/feedback'>
-              <Button variant='text' startIcon={<ThumbUpAltIcon/>}>FeedBack</Button>
-              </Link>
+              <Box sx={{display:'flex',alignItems:'center',padding:1,justifyContent:'end'}}>
                <Button onClick={()=>onSubmit(data.Table)} color='error' type='button' variant='contained'>Cancel Booking</Button>
               </Box>
               

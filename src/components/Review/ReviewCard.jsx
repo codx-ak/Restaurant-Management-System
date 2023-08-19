@@ -1,23 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, Container, Rating, TextField, Typography} from '@mui/material'
 import {useForm} from "react-hook-form"
 import {Send } from '@mui/icons-material'
 import './review.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { ReviewPost } from '../../API/Reviews'
 
 const ReviewCard = () => {
-  const {register,handleSubmit,formState:{errors}}=useForm()
-
+  const [rating,setRating]=useState(0)
+  const navigate=useNavigate()
+  const {register,handleSubmit,watch,setValue,formState:{errors}}=useForm()
+  useEffect(()=>{
+    setValue('rating',rating)
+  },[rating])
+  
+  const onSubmit=(data)=>{
+    ReviewPost(data)
+    navigate('/home')
+    }
   return (
     <Container className='contact'>
       <Box sx={{display:'flex',justifyContent:"center",alignItems:"center",height:550}}>
-    <form action="" method="post" onSubmit={handleSubmit((e)=>console.log(e))}>
+    <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
       <Card className='card' variant='outlined'>
-      <TextField {...register("Name",{required:"Enter Name"})} autoComplete='true' error={errors.Name?true:false} variant='standard'  label="Name" type='text'/>
-      <TextField {...register("Email",{required:"Enter Email"})} autoComplete='true' error={errors.Email?true:false} variant='standard'  label="Email" type='email'/>
-      <TextField {...register("message",{required:"Enter message"})} multiline sx={{width:'350px'}}
+      <TextField {...register("name",{required:"Enter Name"})} autoComplete='true' error={errors.Name?true:false} variant='standard'  label="Name" type='text'/>
+      <TextField {...register("email",{required:"Enter Email"})} autoComplete='true' error={errors.Email?true:false} variant='standard'  label="Email" type='email'/>
+      <Typography component='p' sx={{alignSelf:'start',paddingLeft:'10%'}}> <span>Rating :</span> <Rating onChange={e=>setRating(e.target.value)} precision={0.5}/></Typography>
+      <input {...register("rating",{required:"Enter rating"})} value={rating} type="hidden" name="" />
+      <TextField {...register("message",{required:"Enter message"})} multiline sx={{width:'350px',height:'150px'}}
           maxRows={4} error={errors.message?true:false} variant='standard'  label="Message" type='text'/>
-      <Typography component='p'> <span>Rating :</span> <Rating  aria-label='Rating' precision={0.5}/></Typography>
+      
       <Box sx={{width:"100%",display:'flex',justifyContent:"space-around",alignItems:"center"}}>
       <Link to='/home'>
       <Button variant='text'>Cancel</Button>

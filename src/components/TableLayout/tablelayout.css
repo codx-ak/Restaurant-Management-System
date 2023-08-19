@@ -1,5 +1,6 @@
 .Table-Detail{
-    height: 85vh;
+    height: 550px;
+    margin-bottom: 30px;
     background-image: url(../../assets/images/table.jpg);
     background-repeat: no-repeat;
     background-size: contain;

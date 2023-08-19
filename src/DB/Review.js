@@ -1,0 +1,22 @@
+export const ReviewDB=[
+    {
+        name:'Ak',
+        rating:'4',
+        message:'good!'
+    },
+    {
+        name:'Ak',
+        rating:'5',
+        message:'good!'
+    },
+    {
+        name:'Ak',
+        rating:'3',
+        message:'good!'
+    },
+    {
+        name:'Ak',
+        rating:'3',
+        message:'good!'
+    }
+]
