@@ -1,9 +1,10 @@
 import { Box,Typography,Container } from '@mui/material'
 import React from 'react'
 import MenuItem from '../../components/MenuCard/MenuItem'
-import { Menu } from '../../DB/Menu'
+import { useSelector } from 'react-redux'
 
 const MenuPage = () => {
+  const Menu=useSelector(state=>state.MenuStore.value.menuData)
   return (
     <Box id='Menu'>
       <Typography className='first-title' variant='h6'>Menu</Typography>

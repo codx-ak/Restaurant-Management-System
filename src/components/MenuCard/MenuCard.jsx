@@ -9,9 +9,10 @@ const MenuCard = ({MenuItem}) => {
       {
         //Home Page Menu Card 
         MenuItem.items && MenuItem.items.map((item,index)=>{
+          console.log(item.image)
           return(
             <div key={index} className='Menu-Item'>
-            <img src={item.image} alt="" />
+            <img src={item.image} srcSet={item.image} alt=""/>
             <Box sx={{width:'65%'}}>
             <Typography variant='h6' className='Menu-Title' component='p'>{item.item_name}</Typography>
             <Typography sx={{color:'gray',marginTop:1}} component='p'>{item.description}</Typography>

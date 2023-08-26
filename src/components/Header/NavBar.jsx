@@ -24,15 +24,15 @@ export default function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1,marginBottom:10 }}>
-      <AppBar sx={{backgroundColor:'white'}}>
+    <Box sx={{ flexGrow: 1}}>
+      <AppBar sx={{backgroundColor:'white'}} position='static'>
         <Toolbar>
           <Typography variant="h5" color='error' component="div" sx={{ flexGrow: 1 }}>
             Codx.
           </Typography>
             <div>
             <Badge color="secondary" variant="dot">
-                <Link to='/orders'><LocalMallIcon/></Link>
+                <Link to='/orders'><LocalMallIcon color="primary"/></Link>
               </Badge>
               <IconButton
                 size="large"
@@ -40,7 +40,7 @@ export default function NavBar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
-                color="secondary"
+                color="primary"
               >
                 <WidgetsIcon />
               </IconButton>

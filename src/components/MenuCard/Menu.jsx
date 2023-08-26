@@ -1,10 +1,12 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
 import MenuCard from './MenuCard'
-import { MenuData } from '../../DB/MenuData'
+
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
 
 const Menu = () => {
+  const MenuData=useSelector(state=>state.MenuStore.value.sampleMenu)
   return (
     <Box id='Menu'>
     <Typography className='first-title' variant='h6'>Specialties</Typography>
