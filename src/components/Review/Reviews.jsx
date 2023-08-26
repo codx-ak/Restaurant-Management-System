@@ -7,9 +7,9 @@ const Reviews = ({Data}) => {
    <Card sx={{ boxShadow: 1 }} variant='outlined' className='review-item'>
     <img src={avatar} alt={avatar} />
     <Box>
-        <Typography variant='h6'>{Data.name}</Typography>
-        <Typography component='div'><Rating precision={0.5} value={Number(Data.rating)}/> </Typography>
-        <Typography component='p'>{Data.message}</Typography>
+        <Typography variant='h6'>{Data.customer_name}</Typography>
+        <Typography component='div'><Rating precision={0.5} readOnly value={Number(Data.rating)}/> </Typography>
+        <Typography component='p'>{Data.feedback_text}</Typography>
     </Box>
    </Card>
   )

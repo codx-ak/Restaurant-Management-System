@@ -1,13 +1,20 @@
 import { Container, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TableCard from '../../components/Admin/TableCard'
+import { TableFilterByStatus } from '../../API/Table'
 
 const ManageTable = () => {
+  const[Table,setTable]=useState()
+  useEffect(()=>{
+    setTable(TableFilterByStatus)
+  },[])
   return (
     <Container>
       <Typography className='first-title' variant='h6'>Orders</Typography>
       <Typography  className='second-title' variant='h4'>A Culinary Journey Awaits!</Typography>
-      <TableCard/>
+      {
+        Table.length ?<TableCard Booking={Table}/> :<Typography component='p'> No Items</Typography>
+      }
     </Container>
   )
 }

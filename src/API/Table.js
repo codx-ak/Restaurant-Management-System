@@ -18,6 +18,11 @@ export const TableFilterById=async(id)=>
         }
 }
 
+export const TableFilterByStatus=await axios.get(BaseUrl+"/tables?status=Booked")
+    .then(table=>table.data)
+    .catch(err=>console.log(err))
+
+
 export const TableBooking=async(id,data)=>{
     try{
         const response= await axios.patch((BaseUrl+"/tables?table_no="+id),data)

@@ -2,32 +2,26 @@ import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const TableCard = () => {
-    const [Order,setOrder]=useState([])
-
-    useEffect(()=>{
-      //Local Storage to Get the Booking Details 
-        const Result=localStorage.getItem("table")
-        setOrder(JSON.parse(Result))
-    },[localStorage])
+const TableCard = ({Booking}) => {
+    
   return (
     <TableContainer sx={{padding:2}}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
                 <TableCell align='center'>Table No</TableCell>
-                <TableCell align='center'>Order ID</TableCell>
+                <TableCell align='center'>Booking ID</TableCell>
                 <TableCell align='center'>Name</TableCell>
                 <TableCell align='center'>View</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {
-                Order && 
-                        <TableRow key={Order.Table} hover  tabIndex={-1}>
-                        <TableCell align='center'>{Order.Table}</TableCell>
-                        <TableCell align='center'>{Order.Order}</TableCell>
-                        <TableCell align='center' >{Order.name}</TableCell>
+                Booking && 
+                        <TableRow key={Booking.Table} hover  tabIndex={-1}>
+                        <TableCell align='center'>{Booking.Table}</TableCell>
+                        <TableCell align='center'>{Booking.Order}</TableCell>
+                        <TableCell align='center' >{Booking.name}</TableCell>
                         <TableCell align='center'><Link to=''><Button variant='contained'>view</Button></Link></TableCell>
                         </TableRow>
                     

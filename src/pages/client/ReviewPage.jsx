@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReviewCard from '../../components/Review/ReviewCard'
 import { Box, Container, Typography } from '@mui/material'
 import Reviews from '../../components/Review/Reviews'
-import { ReviewDB } from '../../DB/Review'
-
+import {feedbackGet} from '../../API/feedback'
 const ReviewPage = () => {
+  const [reviews,setReview]=useState([])
+  useEffect(()=>{
+    setReview(feedbackGet)
+  },[reviews])
   return (
     <Box>
       <Typography className='first-title' variant='h6'>Review</Typography>
@@ -13,7 +16,7 @@ const ReviewPage = () => {
         <Box className='Reviews-items'> 
           {
             //Reviews data mapping
-            ReviewDB.length ? ReviewDB.map((data,index)=>{
+            reviews.length ? reviews.map((data,index)=>{
               return(<Reviews key={index} Data={data}/>)
             }) : ''
           }
