@@ -1,27 +1,30 @@
 import { Button, Card, Container, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useParams} from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { Table } from '../../DB/Table';
 import '../../components/TableLayout/tablelayout.css'
+import { TableFilterById } from '../../API/Table';
 
 const TableDetail = () => {
+    const[Table,setTable]=useState([])
     // url to getting Table Id
     let { id } = useParams();
-    //Taable Id to filter Data with DB
-    const FilteredData=Table.filter(table=>table.tableNo == id)
+    useEffect(()=>{
+        TableFilterById(id).then(item=>setTable(item))
+    },[id])
+    
   return (
     <Container className='Table-Detail'>
         <Typography className='first-title' variant='h6'>Table</Typography>
         <Typography className='second-title' variant='h4'>Discover Our Flavorful Symphony!</Typography>
         {
             // Filterd Data Mapping
-            FilteredData.length ? FilteredData.map((table,index)=>{
+            Table.length ? Table.map((table,index)=>{
                 return (
                     <Card variant='outlined' className='table-detail-card'>
                         <Typography component='div' align='center' padding={2} variant='h5'>Table Overview</Typography>
-                        <Typography component='p'>Table No : {table.tableNo}</Typography>
-                        <Typography component='p'>Seat Count : {table.seatingCapacity}</Typography>
+                        <Typography component='p'>Table No : {table.table_no}</Typography>
+                        <Typography component='p'>Seat Count : {table.seating_capacity}</Typography>
                         <Typography component='p'>Status : {table.status}</Typography>
                         <Typography component='p'>Reservation : {table.reservation.name || "Not Booked"}</Typography>
                         {

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { Table } from '../../DB/Table'
 import { BookingPost } from '../../API/TableBooking'
 import { useNavigate } from 'react-router-dom';
+import { AddBooking } from '../../Store/TableSlice'
 
 const TableCard = () => {
   const [Tables,setTables]=useState([])
@@ -15,7 +16,7 @@ const TableCard = () => {
 
   const onSubmit=(data)=>{
     //calling Table Booking Reducer
-    dispatch(BookingPost(data))
+    dispatch(AddBooking(data))
     //navigate confirmation page
     navigate('success')
   }
