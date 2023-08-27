@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import {Box, Typography } from '@mui/material'
-import {useSelector } from 'react-redux'
+import { TableFilterByStatus } from '../../API/Table'
 const ManageBooking = () => {
-  //reducer to getting booked details
-  const OrdersData=useSelector(state=>state.OrderStore.value)
+  const[BookingData,setBooking]=useState([])
+  useEffect(()=>{
+    setBooking(TableFilterByStatus)
+  },[])
   return (
     <Box className='orders'>
       <Typography className='first-title' variant='h6'>Orders</Typography>
@@ -12,7 +14,7 @@ const ManageBooking = () => {
       <Box className='orders-container'>
       {
         // Table Booked Data Mapping
-        OrdersData.length ? OrdersData.map((order,index)=><OrderCard key={index} order={order}/>) 
+        BookingData.length ? BookingData.map((order,index)=><OrderCard key={index} order={order}/>) 
         :<Typography sx={{textAlign:'center',color:'lightgray',fontSize:'30px',padding:'40px 0'}} component='p'> No Bookings Found</Typography>
       }
       </Box>

@@ -3,10 +3,9 @@ import {useForm} from 'react-hook-form'
 import { Button,FormControl,InputLabel,MenuItem,Select,TextField} from '@mui/material'
 import './booking.css'
 import { useDispatch } from 'react-redux'
-import { Table } from '../../DB/Table'
-import { BookingPost } from '../../API/TableBooking'
 import { useNavigate } from 'react-router-dom';
 import { AddBooking } from '../../Store/TableSlice'
+import { TableFilterByGuest } from '../../API/Table'
 
 const TableCard = () => {
   const [Tables,setTables]=useState([])
@@ -22,24 +21,15 @@ const TableCard = () => {
   }
 
   const GuestCount=watch('guest') || 0
-  
   useEffect(()=>{
     //updating Tables 
-    const Result=Table.filter(table=>{
-    if(table.status=='Available'){
-      return table.seatingCapacity >= GuestCount
-    }
-  })
+    const Result=TableFilterByGuest.filter(table=>table.seating_capacity >= GuestCount)
   setTables(Result)
   },[GuestCount])
 
   return (
     <div className="BookingForm">
       <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
-
-        <datalist id='guest_limit'>
-          <option value="1">1</option>
-        </datalist>
 
         <TextField 
         {...register('name',{required:"Name Field Required"})} 
@@ -69,7 +59,7 @@ const TableCard = () => {
           color="success"
           defaultValue=''
           >
-            <MenuItem value=''></MenuItem>
+            <MenuItem disabled value=''></MenuItem>
           <MenuItem value='8 AM - 10 AM'>08 AM - 10 AM</MenuItem>
           <MenuItem value='10 AM - 12 PM'>10 AM - 12 PM</MenuItem>
           <MenuItem value='12 PM - 2 PM'>12 PM - 02 PM</MenuItem>
@@ -89,7 +79,7 @@ const TableCard = () => {
           color="success"
           defaultValue=''
           >
-          <MenuItem value=''></MenuItem>
+          <MenuItem disabled value=''></MenuItem>
           <MenuItem value='1'>1 Person</MenuItem>
           <MenuItem value='2'>2 Person</MenuItem>
           <MenuItem value='3'>3 Person</MenuItem>
@@ -109,9 +99,9 @@ const TableCard = () => {
           color="success"
           defaultValue=''
           >
-            <MenuItem value=''></MenuItem>
+            <MenuItem disabled value=''></MenuItem>
             {
-              Tables.length && Tables.map((table,index)=><MenuItem key={index} value={table.tableNo}>{table.tableNo}</MenuItem>)
+              Tables.length && Tables.map((table,index)=><MenuItem key={index} value={table.table_no}>{table.table_no}</MenuItem>)
             }
         </Select>
         </FormControl>

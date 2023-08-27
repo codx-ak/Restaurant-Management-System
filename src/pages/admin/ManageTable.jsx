@@ -4,9 +4,10 @@ import TableCard from '../../components/Admin/TableCard'
 import { TableFilterByStatus } from '../../API/Table'
 
 const ManageTable = () => {
-  const[Table,setTable]=useState()
+  const[Table,setTable]=useState([])
   useEffect(()=>{
     setTable(TableFilterByStatus)
+    console.log(TableFilterByStatus)
   },[])
   return (
     <Container>

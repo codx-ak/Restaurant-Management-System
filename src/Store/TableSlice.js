@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TableGet,TableBooking } from "../API/Table";
+import { TableGet,TableBooking, TableBookingCancel } from "../API/Table";
 const initialState={
     value:TableGet
 }
@@ -13,6 +13,7 @@ const TableSlice=createSlice({
             var orderId = "Ak" + Math.random().toString(16).slice(2)
             const OrderModel={
                 Order:orderId,
+                Table:action.payload.table,
                 name:action.payload.name,
                 email:action.payload.email,
                 mobile:action.payload.mobile,
@@ -22,9 +23,14 @@ const TableSlice=createSlice({
                 booked:today
             }
             TableBooking(action.payload.table,{reservation:OrderModel,status:"Booked"})
+            // store local storage
+            localStorage.setItem("table",JSON.stringify(OrderModel)) 
+        },
+        CancelBooking:(state,action)=>{
+            TableBookingCancel(action.payload,{reservation:{},status:"Available"})
         }
     }
 })
 
-export const {AddBooking}=TableSlice.actions
+export const {AddBooking,CancelBooking}=TableSlice.actions
 export default TableSlice.reducer

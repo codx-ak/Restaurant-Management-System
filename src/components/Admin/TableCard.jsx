@@ -1,9 +1,8 @@
 import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const TableCard = ({Booking}) => {
-    
+
   return (
     <TableContainer sx={{padding:2}}>
         <Table stickyHeader aria-label="sticky table">
@@ -17,13 +16,13 @@ const TableCard = ({Booking}) => {
           </TableHead>
           <TableBody>
             {
-                Booking && 
-                        <TableRow key={Booking.Table} hover  tabIndex={-1}>
-                        <TableCell align='center'>{Booking.Table}</TableCell>
-                        <TableCell align='center'>{Booking.Order}</TableCell>
-                        <TableCell align='center' >{Booking.name}</TableCell>
+                Booking && Booking.map((data,index)=>{
+                        return(<TableRow key={index} hover  tabIndex={-1}>
+                        <TableCell align='center'>{data.table_no}</TableCell>
+                        <TableCell align='center'>{data.reservation.Order}</TableCell>
+                        <TableCell align='center' >{data.reservation.name}</TableCell>
                         <TableCell align='center'><Link to=''><Button variant='contained'>view</Button></Link></TableCell>
-                        </TableRow>
+                        </TableRow>)})
                     
             }
           </TableBody>

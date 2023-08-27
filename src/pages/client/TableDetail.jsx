@@ -10,7 +10,7 @@ const TableDetail = () => {
     // url to getting Table Id
     let { id } = useParams();
     useEffect(()=>{
-        TableFilterById(id).then(item=>setTable(item))
+        TableFilterById(id).then(item=>setTable([item]))
     },[id])
     
   return (
@@ -21,15 +21,15 @@ const TableDetail = () => {
             // Filterd Data Mapping
             Table.length ? Table.map((table,index)=>{
                 return (
-                    <Card variant='outlined' className='table-detail-card'>
+                    <Card variant='outlined' key={index} className='table-detail-card'>
                         <Typography component='div' align='center' padding={2} variant='h5'>Table Overview</Typography>
                         <Typography component='p'>Table No : {table.table_no}</Typography>
                         <Typography component='p'>Seat Count : {table.seating_capacity}</Typography>
                         <Typography component='p'>Status : {table.status}</Typography>
-                        <Typography component='p'>Reservation : {table.reservation.name || "Not Booked"}</Typography>
+                        <Typography component='p'>Reservation : {table.reservation.name || " NA "}</Typography>
                         {
                             // checking Table is available or booked 
-                            table.status=="Available" && <Typography component='div'><Link to='/booking'>
+                            table.status==="Available" && <Typography component='div'><Link to='/booking'>
                                 <Button color='error' variant='outlined'>Book Now</Button>
                                 </Link></Typography>
                         }

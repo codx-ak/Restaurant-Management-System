@@ -11,7 +11,7 @@ const TablePage = () => {
       <Typography className='second-title' variant='h4'>A Culinary Journey Awaits!</Typography>
       {
         //Table Details  mapping in Layout
-        Table?<TableLayout table={Table}/> :<Typography sx={{textAlign:'center',color:'lightgray',fontSize:'30px',padding:'40px 0'}} component='p'> No Tables Available</Typography>
+        Table? <TableLayout table={Table}/> :<Typography sx={{textAlign:'center',color:'lightgray',fontSize:'30px',padding:'40px 0'}} component='p'> No Tables Available</Typography>
       }
       
     </Container>

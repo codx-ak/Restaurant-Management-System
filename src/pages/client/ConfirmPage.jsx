@@ -27,7 +27,6 @@ const ConfirmPage = () => {
             <Typography component='p'>Check-In : {Order.checkIn}</Typography>
             <Typography component='p'>Time :{Order.time}</Typography>
             <Typography component='p'> Guest : {Order.guest}</Typography>
-            <Typography component='p'> Status : {Order.status}</Typography>
             </Card>
         }
     </Container>
