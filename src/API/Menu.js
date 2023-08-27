@@ -1,11 +1,11 @@
-import axios from 'axios'
-import { BaseUrl } from './Url'
+import api from './api'
 
-export const sampleMenu= await axios.get(BaseUrl+"/sample_menu")
+
+export const sampleMenu= await api.get("/sample_menu")
     .then((menu)=>menu.data)
     .catch(e=>console.log(e))
     
-export const menuData= await axios.get(BaseUrl+"/menu")
+export const menuData= await api.get("/menu")
     .then((menu)=>menu.data)
     .catch(e=>console.log(e))
     

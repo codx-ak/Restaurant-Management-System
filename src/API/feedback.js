@@ -1,12 +1,11 @@
-import axios from 'axios'
-import { BaseUrl } from './Url'
+import api from './api'
 
-export const feedbackGet= await axios.get(BaseUrl+"/api/feedback")
+export const feedbackGet= await api.get("/api/feedback")
     .then((msg)=>msg.data)
     .catch(e=>console.log(e))
 
 export const feedbackPost=async(data)=>{
-    await axios.post(BaseUrl+"/api/feedback",data,{headers:{
+    await api.post("/api/feedback",data,{headers:{
         'Accept':'application/json',
         'Content-Type':'application/json'
     }})

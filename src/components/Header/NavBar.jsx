@@ -9,8 +9,15 @@ import Menu from '@mui/material/Menu';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import { Link } from 'react-router-dom';
-import { Badge } from '@mui/material';
+import { Badge, Button } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import TocIcon from '@mui/icons-material/Toc';
+import BookOnlineIcon from '@mui/icons-material/BookOnline';
+import ChatIcon from '@mui/icons-material/Chat';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import './nav.css'
+import { Padding } from '@mui/icons-material';
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,13 +34,13 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1}}>
       <AppBar sx={{backgroundColor:'white'}} position='static'>
         <Toolbar>
-          <Typography variant="h5" color='error' component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1,color:'#e52b34',fontSize:'30px' }}>
             Codx.
           </Typography>
             <div>
             <Badge color="secondary" variant="dot">
                 <Link to='/orders'><LocalMallIcon color="primary"/></Link>
-              </Badge>
+            </Badge>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -41,6 +48,7 @@ export default function NavBar() {
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="primary"
+                sx={{margin:'0 15px'}}
               >
                 <WidgetsIcon />
               </IconButton>
@@ -59,12 +67,13 @@ export default function NavBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}><Link to='/home'><Typography component='li'>Home</Typography></Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to='/menu'><Typography component='li'>Menu</Typography></Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to='/table-overview'><Typography component='li'>Table</Typography></Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to='/booking'><Typography component='li'>Reservation</Typography></Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to='/feedback'><Typography component='li'>Reviews</Typography></Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to='/admin'><Typography component='li'>Admin</Typography></Link></MenuItem>
+                <Link to='/home'><MenuItem onClick={handleClose}><Button startIcon={<HomeIcon/>}>Home</Button></MenuItem></Link>
+                <Link to='/menu'><MenuItem onClick={handleClose}><Button startIcon={<RestaurantMenuIcon/>}>Menu</Button></MenuItem></Link>
+                <Link to='/table-overview'><MenuItem onClick={handleClose}><Button startIcon={<TocIcon/>}>Tables</Button></MenuItem></Link>
+                <Link to='/booking'><MenuItem onClick={handleClose}><Button startIcon={<BookOnlineIcon/>}>Bookings</Button></MenuItem></Link>
+                <Link to='/feedback'><MenuItem onClick={handleClose}><Button startIcon={<ChatIcon/>}>Reviews</Button></MenuItem></Link>
+                <Link to='/admin'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Admin</Button></MenuItem></Link>
+                
               </Menu>
             </div>
             </Toolbar>
