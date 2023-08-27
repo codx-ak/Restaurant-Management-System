@@ -16,7 +16,7 @@ const OrderDetail = () => {
     let { id } = useParams();
     useEffect(()=>{
         TableFilterById(id).then(item=>setTable([item]))
-    },[id])
+    },[id]) 
 
   const onSubmit=(data)=>{
     //axios to delete the Booked Table

@@ -10,7 +10,7 @@ const ReviewPage = () => {
       <Typography className='first-title' variant='h6'>Review</Typography>
       <Typography className='second-title' variant='h4'>Savor, Share, Shape Our Taste</Typography>
       <Container className='ReviewPage'>
-        <Box className='Reviews-items'> 
+        <Box className='Reviews-items'>
           {
             //Reviews data mapping
             reviews.length ? reviews.map((data,index)=>{
@@ -18,6 +18,7 @@ const ReviewPage = () => {
             }) : ''
           }
         </Box>
+        <Typography sx={{display:'none'}} className='comment-text' variant='h6'>Comments</Typography>
         {/* Review Form  */}
       <ReviewCard/>
       </Container>

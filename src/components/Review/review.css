@@ -25,34 +25,42 @@
     justify-content: space-between;
 }
 .review-item{
-    width: 300px;
-    height: 120px;
+    max-width: 450px;
+    min-height: 200px;
     overflow: hidden;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    padding: 10px;
+    padding:10px 20px;
+    box-sizing: border-box;
     border-radius: 5px;
-    margin: 10px 0;
-    background-color:rgba(173, 216, 230, 0.116) ;
 }
 .review-item img{
-    width:80px;
+    width:30px;
 }
 .review-item p{
     color: gray;
     font-size: 14px;
-    width: 180px;
     text-align: justify;
 }
-.review-item:nth-child(2n){
-    margin-left: 50px;
-}
-
 .Reviews-items{
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
     align-items: center;
+    height: 500px;
+    overflow-y: scroll;
+    margin-top: 30px;
 }
+/* width */
+.Reviews-items::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  .Reviews-items::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  .Reviews-items::-webkit-scrollbar-thumb {
+    background: #b0adad9d;
+  }

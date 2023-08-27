@@ -13,11 +13,10 @@ const MenuCard = ({MenuItem}) => {
           return(
             <div key={index} className='Menu-Item'>
             <img src={item.image} srcSet={item.image} alt=""/>
-            <Box sx={{width:'65%'}}>
+            <Box sx={{width:'70%'}}>
             <Typography variant='h6' className='Menu-Title' component='p'>{item.item_name}</Typography>
-            <Typography sx={{color:'gray',marginTop:1}} component='p'>{item.description}</Typography>
+            <Typography sx={{color:'gray',marginTop:1,textAlign:'left'}} component='p'>{item.description}</Typography>
             </Box>
-            <Typography sx={{color:'#e52b34',fontWeight:'bold'}} variant='h6' component='p'>${item.price}</Typography>
             </div>
           )
         })

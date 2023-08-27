@@ -4,11 +4,10 @@ import avatar from '../../assets/images/avatar.png'
 
 const Reviews = ({Data}) => {
   return (
-   <Card sx={{ boxShadow: 1 }} variant='outlined' className='review-item'>
-    <img src={avatar} alt={avatar} />
+   <Card variant='outlined' className='review-item'>
     <Box>
-        <Typography variant='h6'>{Data.customer_name}</Typography>
-        <Typography component='div'><Rating precision={0.5} readOnly value={Number(Data.rating)}/> </Typography>
+      <Box sx={{display:'flex',gap:'10px',alignItems:'center'}}><img src={avatar} alt={avatar} /><Typography variant='h6'>  {Data.customer_name}</Typography></Box>
+        <Typography component='div' align='right'><Rating precision={0.5} readOnly size='small' value={Number(Data.rating)}/> </Typography>
         <Typography component='p'>{Data.feedback_text}</Typography>
     </Box>
    </Card>

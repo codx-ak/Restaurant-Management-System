@@ -39,16 +39,20 @@
 .Menu-Item:hover .Menu-Title{
     color: #e52b34;
 }
+.Menu-Title{
+    border-bottom: 1px solid rgba(211, 211, 211, 0.51);
+    text-align: left;
+}
 #Menu button{
     width: 200px;
 }
 
 .MenuSingleCard{
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 260px;
     overflow: hidden;
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 15px;
     position: relative;
 }
 .MenuSingleCard img{
@@ -83,6 +87,7 @@
 .MenuSingleContainer{
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 5px;
 }

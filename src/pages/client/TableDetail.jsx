@@ -26,7 +26,7 @@ const TableDetail = () => {
                         <Typography component='p'>Table No : {table.table_no}</Typography>
                         <Typography component='p'>Seat Count : {table.seating_capacity}</Typography>
                         <Typography component='p'>Status : {table.status}</Typography>
-                        <Typography component='p'>Reservation : {table.reservation.name || " NA "}</Typography>
+                        <Typography component='p'>Reserved : {table.reservation.name || " NA "}</Typography>
                         {
                             // checking Table is available or booked 
                             table.status==="Available" && <Typography component='div'><Link to='/booking'>

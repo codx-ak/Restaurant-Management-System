@@ -6,12 +6,15 @@
     background-size: contain;
     background-position:80%;
     background-position-y: 100px;
-    padding: 20px;
+    padding: 20px; 
 }
 .table-detail-card{
     border-radius: 15px;
-    padding: 30px;
+    padding:30px;
     width: 250px;
+}
+.table-detail-card p:last-child{
+    border:none
 }
 .table-detail-card button{
     width: 250px;
@@ -20,6 +23,6 @@
 }
 .Table-Detail p{
     color: gray;
-    padding: 10px;
-    border-bottom: 1px solid rgba(211, 211, 211, 0.726);
+    padding:20px 10px;
+    border-bottom: 1px dotted rgba(211, 211, 211, 0.726);
 }

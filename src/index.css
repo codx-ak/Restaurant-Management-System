@@ -6,6 +6,7 @@ body {
 }
 html{
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 img{
@@ -40,41 +41,36 @@ img{
     text-align: center;
   }
   #About{
-    color: white;
+    background-image:none !important;
   }
-  #About p {
-    color: white !important;
+  #About p{
+    width: auto !important;
   }
   .footer a {
     display: block;
   }
-  .MenuSingleContainer {
-    justify-content: center;
-}
+
 .table-detail-card {
   width: 82%;
 }
 .Table-Detail {
-  height: 550px;
+  background-image: none !important;
+  margin-bottom: 55px !important;
+}
+.table-detail-card{
+  width: auto !important;
 }
 .orders {
-  min-height: 100% !important;
-  background-size: auto;
+  background-size: auto !important;
 }
 .ReviewPage {
   flex-direction: column-reverse;
 }
 .contact .card {
-  width: auto;
+  width: auto !important;
 }
 .review-item:nth-child(2n) {
   margin-left: 0 !important;
-}
-.Reviews-items {
-  flex-direction: row !important;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: mandatory auto;
 }
 .review-item {
   min-width: 300px;
@@ -86,13 +82,13 @@ img{
   width: auto !important;
 }
 .order-card {
-  width: auto;
+  width: 300px !important;
 }
 .OrderDetail {
-  width: auto;
-  height: auto;
-  background-image: none;
-  padding: 10px;
+  width: auto !important;
+  height: auto !important;
+  background-image: none !important;
+  padding: 10px !important;
 }
 .detail-card {
   width: auto !important;
@@ -110,14 +106,16 @@ img{
 .Reviews-items {
   flex-direction: row !important;
   overflow-x: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-align: center;
+  height: 300px !important;
 }
 .review-item {
   min-width: 300px;
 }
 .review-item:nth-child(2n) {
   margin-left: 0 !important;
+}
+.comment-text{
+  display: block !important;
 }
 
 }
