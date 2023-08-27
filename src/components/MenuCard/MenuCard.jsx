@@ -9,7 +9,6 @@ const MenuCard = ({MenuItem}) => {
       {
         //Home Page Menu Card 
         MenuItem.items && MenuItem.items.map((item,index)=>{
-          console.log(item.image)
           return(
             <div key={index} className='Menu-Item'>
             <img src={item.image} srcSet={item.image} alt=""/>
