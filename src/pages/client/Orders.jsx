@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import {Box, Typography } from '@mui/material'
 import { TableFilterByStatus } from '../../API/Table'
+
 const ManageBooking = () => {
   const[BookingData,setBooking]=useState([])
   useEffect(()=>{
-    setBooking(TableFilterByStatus)
+    TableFilterByStatus().then(item=>setBooking(item))
   },[])
   return (
     <Box className='orders'>

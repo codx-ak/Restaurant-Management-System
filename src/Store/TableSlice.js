@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TableGet,TableBooking, TableBookingCancel } from "../API/Table";
+import { TableBooking, TableBookingCancel } from "../API/Table";
 const initialState={
-    value:TableGet
+    value:[]
 }
 const TableSlice=createSlice({
     name:'TableStore',
@@ -24,7 +24,7 @@ const TableSlice=createSlice({
             }
             TableBooking(action.payload.table,{reservation:OrderModel,status:"Booked"})
             // store local storage
-            localStorage.setItem("table",JSON.stringify(OrderModel)) 
+            localStorage.setItem("table",JSON.stringify(OrderModel))
         },
         CancelBooking:(state,action)=>{
             TableBookingCancel(action.payload,{reservation:{},status:"Available"})

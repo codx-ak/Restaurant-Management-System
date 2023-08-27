@@ -1,10 +1,13 @@
 import { Container, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TableLayout from '../../components/TableLayout/TableLayout'
-import { useSelector } from 'react-redux'
+import { TableData} from '../../API/Table'
 
 const TablePage = () => {
-  const Table=useSelector(state=>state.TableStore.value)
+  const[Table,setTable]=useState([])
+ useEffect(()=>{
+  TableData().then(item=>setTable(item))
+},[])
   return (
     <Container className='Table-page'>
       <Typography className='first-title' variant='h6'>Table Overview</Typography>

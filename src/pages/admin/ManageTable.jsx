@@ -6,8 +6,7 @@ import { TableFilterByStatus } from '../../API/Table'
 const ManageTable = () => {
   const[Table,setTable]=useState([])
   useEffect(()=>{
-    setTable(TableFilterByStatus)
-    console.log(TableFilterByStatus)
+    TableFilterByStatus().then(item=>setTable(item))
   },[])
   return (
     <Container>

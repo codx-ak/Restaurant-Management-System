@@ -1,16 +1,18 @@
 import { Box, Button, Card, IconButton, Typography } from '@mui/material'
 import React from 'react'
 import './orders.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {Clear } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 import { CancelBooking } from '../../Store/TableSlice'
 
 const OrderCard = ({order}) => {
+  const navigate=useNavigate()
   const dispatch=useDispatch()
   const onSubmit=(data)=>{
     // Booked Table Cancel With Api
     dispatch(CancelBooking(data))
+    navigate('/home')
   }
     return (
     <Card variant='outlined' className='order-card'>
