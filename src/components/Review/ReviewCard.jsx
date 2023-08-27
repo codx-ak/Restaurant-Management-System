@@ -3,13 +3,17 @@ import { Box, Button, Card, Container, Rating, TextField, Typography} from '@mui
 import {useForm} from "react-hook-form"
 import {Send } from '@mui/icons-material'
 import './review.css'
-import { Link, useNavigate } from 'react-router-dom'
-import { ReviewPost } from '../../API/Reviews'
+import { useDispatch } from 'react-redux'
+import { AddReview } from '../../Store/ReviewSlice'
+import { Link,useNavigate } from 'react-router-dom'
 
 const ReviewCard = () => {
-  const [rating,setRating]=useState(0)
+  const dispatch=useDispatch()
   const navigate=useNavigate()
-  const {register,handleSubmit,watch,setValue,formState:{errors}}=useForm()
+  const [rating,setRating]=useState(0)
+
+  const {register,handleSubmit,setValue,formState:{errors}}=useForm()
+  
   useEffect(()=>{
     //setting rating value in form
     setValue('rating',rating)
@@ -17,8 +21,7 @@ const ReviewCard = () => {
   
   const onSubmit=(data)=>{
     //review post method
-    ReviewPost(data)
-    //navigate to home
+    dispatch(AddReview(data))
     navigate('/home')
     }
   return (
