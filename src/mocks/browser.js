@@ -2,20 +2,52 @@ import {rest, setupWorker } from "msw";
 
 const worker=setupWorker(
 
-    //Table Booking Post Api
-    rest.post('http://127.0.0.1:3000/api/booking',(req,res,ctx)=>{
+    //Getting Feedback data
+    rest.get('https://codx-json-server.vercel.app/api/feedback',(req,res,ctx)=>{
         return res()
     }),
 
-    //Table Booking Delete Api
-    rest.delete('http://127.0.0.1:3000/api/booking/:id',(req,res,ctx)=>{
+    //creating new feedback
+    rest.post('https://codx-json-server.vercel.app/api/feedback',(req,res,ctx)=>{
         return res()
     }),
 
-    //Table Review Post Api
-    rest.post('http://127.0.0.1:3000/api/feedback',(req,res,ctx)=>{
+    //Getting Menu data
+    rest.get('https://codx-json-server.vercel.app/api/sample_menu',(req,res,ctx)=>{
         return res()
     }),
+
+    //Getting Menu data
+    rest.get('https://codx-json-server.vercel.app/api/menu',(req,res,ctx)=>{
+        return res()
+    }),
+
+
+    //Gettting All Table data
+    rest.get('https://codx-json-server.vercel.app/api/tables',(req,res,ctx)=>{
+        return res()
+    }),
+
+    //Getting data with id
+    rest.get('https://codx-json-server.vercel.app/api/tables/:id',(req,res,ctx)=>{
+        return res()
+    }),
+
+    //Getting data with status
+    rest.get('https://codx-json-server.vercel.app/api/tables?status=Available',(req,res,ctx)=>{
+        return res()
+    }),
+
+    //Getting data with status
+    rest.get('https://codx-json-server.vercel.app/api/tables?status=Booked',(req,res,ctx)=>{
+        return res()
+    }),
+
+    //Table Booking
+    rest.patch('https://codx-json-server.vercel.app/api/tables/:id',(req,res,ctx)=>{
+        return res()
+    }),
+
 )
 
 worker.start()
