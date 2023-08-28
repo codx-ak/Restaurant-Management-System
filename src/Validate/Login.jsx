@@ -15,9 +15,11 @@ const Login = () => {
   const {register,handleSubmit,formState:{errors}}=useForm()
 
     const  AuthCheck=(data)=>{
+      //validate user details
         if(data.Email==='user@gmail.com'){
             if(data.Psw==='user'){
                 navigate('/home')
+                //calling login function
                 dispatch(AuthLogin())
                 alert("User Login Successfully")
             }
@@ -25,6 +27,7 @@ const Login = () => {
         else if(data.Email==='admin@gmail.com'){
             if(data.Psw==='admin'){
                 navigate('/admin')
+                //calling login function
                 dispatch(AuthLogin())
                 alert("Admin Login Successfully")
             }

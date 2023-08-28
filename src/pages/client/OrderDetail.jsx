@@ -15,13 +15,14 @@ const OrderDetail = () => {
   // url to getting Table Id
     let { id } = useParams();
     useEffect(()=>{
+      //updating filtered Data
         TableFilterById(id).then(item=>setTable([item]))
     },[id]) 
 
   const onSubmit=(data)=>{
-    //axios to delete the Booked Table
+    //calling Table Store function to cancel Booking
     dispatch(CancelBooking(data))
-    //navigate to home
+    //navigate to booking Page
     navigate('/orders')
   }
   return (

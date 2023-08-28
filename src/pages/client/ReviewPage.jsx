@@ -6,6 +6,7 @@ import { feedbackGet } from '../../API/feedback'
 const ReviewPage = () => {
   const [reviews,setReviews]=useState([])
   useEffect(()=>{
+    //getting feedback Data with Api
     feedbackGet().then(res=>setReviews(res))
   },[])
   return (

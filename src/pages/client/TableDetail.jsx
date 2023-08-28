@@ -10,6 +10,7 @@ const TableDetail = () => {
     // url to getting Table Id
     let { id } = useParams();
     useEffect(()=>{
+        //getting filtered Data
         TableFilterById(id).then(item=>setTable([item]))
     },[id])
     

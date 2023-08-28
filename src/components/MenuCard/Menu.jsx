@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 
 const Menu = () => {
+  //getting Menu Data from MenuStore
   const MenuData=useSelector(state=>state.MenuStore.value.sampleMenu)
   return (
     <Box id='Menu'>

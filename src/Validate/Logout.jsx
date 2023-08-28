@@ -7,12 +7,12 @@ const Logout = () => {
     const navigate=useNavigate()
     const dispatch=useDispatch()
     useEffect(()=>{
+      //calling logout funtions
         dispatch(AuthLogout())
+        //navigate home page
         navigate('/')
     })
-  return (
-    <div>Logout</div>
-  )
+  return
 }
 
 export default Logout

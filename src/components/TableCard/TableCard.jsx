@@ -12,16 +12,19 @@ const TableCard = () => {
   const navigate=useNavigate()
   const dispatch=useDispatch()
   const {register,handleSubmit,watch,formState:{errors}}=useForm()
+  //authentication value
   const AuthValue=useSelector(state=>state.AuthStore.value)
 
   const onSubmit=(data)=>{
-    //calling Table Booking Reducer
+    //checking authentication
     if(AuthValue[0]){
+      //calling Table Store to update booking
       dispatch(AddBooking(data))
       //navigate confirmation page
       navigate('success')
     }
     else {
+      //redirect login page
       alert("Login Now")
       navigate('/login')
     }

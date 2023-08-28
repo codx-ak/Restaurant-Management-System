@@ -20,8 +20,9 @@ const ReviewCard = () => {
   },[rating])
   
   const onSubmit=(data)=>{
-    //review post method
+    //calling reviewStore to create new feedback
     dispatch(AddReview(data))
+    //navigate home page
     navigate('/home')
     }
   return (

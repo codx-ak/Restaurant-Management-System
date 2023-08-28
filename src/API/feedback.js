@@ -1,5 +1,6 @@
 import api from './api'
 
+//getting All feedbacks with get method
 export const feedbackGet=async()=>{
     try{
     const response=await api.get("/api/feedback")
@@ -10,6 +11,7 @@ export const feedbackGet=async()=>{
         }
 }
 
+//post new feedbacks
 export const feedbackPost=async(data)=>{
     await api.post("/api/feedback",data,{headers:{
         'Accept':'application/json',

@@ -1,5 +1,6 @@
 import api from './api'
 
+//getting All Table deta with get method
 export const TableData=async()=>{
     try{
     const response=await api.get("/api/tables")
@@ -10,6 +11,7 @@ export const TableData=async()=>{
         }
 }
 
+//getting filtered data with get method
 export const TableFilterById=async(id)=>
 {    try{
     const response= await api.get("/api/tables/"+id)
@@ -20,6 +22,7 @@ export const TableFilterById=async(id)=>
         }
 }
 
+//getting filtered data with get method
 export const TableFilterByGuest=async(guest)=>{
     try{
     const response=await api.get("/api/tables?status=Available")
@@ -31,6 +34,7 @@ export const TableFilterByGuest=async(guest)=>{
         }
 }
 
+//getting filtered data with get method
 export const TableFilterByStatus=async()=>{
     try{
     const response=await api.get("/api/tables?status=Booked")
@@ -41,6 +45,7 @@ export const TableFilterByStatus=async()=>{
         }
 }
 
+//update the table Data
 export const TableBooking=async(id,data)=>{
     try{
     const response=await api.patch(("/api/tables/"+id),data,

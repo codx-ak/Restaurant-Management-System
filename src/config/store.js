@@ -7,10 +7,13 @@ import AuthSlice from '../Store/AuthSlice'
 //config Redux Store
 export const store=configureStore({
     reducer:{
-        //Table Store
+        //Menu Store
         MenuStore:MenuSlice,
+        //Table Store
         TableStore:TableSlice,
+        //Feedback Store
         ReviewStore:ReviewSlice,
+        //Authentication store
         AuthStore:AuthSlice
     }
 })

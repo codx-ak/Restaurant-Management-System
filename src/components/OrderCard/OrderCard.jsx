@@ -10,8 +10,9 @@ const OrderCard = ({order}) => {
   const navigate=useNavigate()
   const dispatch=useDispatch()
   const onSubmit=(data)=>{
-    // Booked Table Cancel With Api
+    // Calling TableStore to Cancel Booking
     dispatch(CancelBooking(data))
+    //navigate Booking Page
     navigate('/booking')
   }
     return (

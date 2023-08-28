@@ -6,6 +6,7 @@ import { TableData} from '../../API/Table'
 const TablePage = () => {
   const[Table,setTable]=useState([])
  useEffect(()=>{
+  //getting details with Api
   TableData().then(item=>setTable(item))
 },[])
   return (

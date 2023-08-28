@@ -22,7 +22,9 @@ import { useSelector } from 'react-redux';
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  //Authentication Checking
   const AuthValue=useSelector(state=>state.AuthStore.value)
+  
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };

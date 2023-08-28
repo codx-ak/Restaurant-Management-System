@@ -4,6 +4,7 @@ import MenuItem from '../../components/MenuCard/MenuItem'
 import { useSelector } from 'react-redux'
 
 const MenuPage = () => {
+  //getting Menu Data from Menu Store
   const Menu=useSelector(state=>state.MenuStore.value.menuData)
   return (
     <Box id='Menu'>

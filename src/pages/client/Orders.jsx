@@ -6,6 +6,7 @@ import { TableFilterByStatus } from '../../API/Table'
 const ManageBooking = () => {
   const[BookingData,setBooking]=useState([])
   useEffect(()=>{
+    //filter with status in table Api
     TableFilterByStatus().then(item=>setBooking(item))
   },[])
   return (
