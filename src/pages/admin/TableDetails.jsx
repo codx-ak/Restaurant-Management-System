@@ -29,7 +29,7 @@ const TableDetails = () => {
                         <Typography component='p'>Email : {table.reservation.email}</Typography>
                         <Typography component='p'>Guest : {table.reservation.guest}</Typography>
                         <Typography component='p'>CheckIn : {table.reservation.checkIn}</Typography>
-                        <Typography component='p'>Time : {table.reservation.Time}</Typography>
+                        <Typography component='p'>Time : {table.reservation.time}</Typography>
                         <Typography component='p'>Status : {table.status}</Typography>
                         <Typography component='p'>Orders : NA</Typography>
                         {
