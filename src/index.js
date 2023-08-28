@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
 
 //Development Mocks Config 
-require('./mocks/browser') 
+//require('./mocks/browser') 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
