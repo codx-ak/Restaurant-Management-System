@@ -2,6 +2,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import MenuSlice from '../Store/MenuSlice'
 import TableSlice from '../Store/TableSlice'
 import ReviewSlice from '../Store/ReviewSlice'
+import AuthSlice from '../Store/AuthSlice'
 
 //config Redux Store
 export const store=configureStore({
@@ -9,6 +10,7 @@ export const store=configureStore({
         //Table Store
         MenuStore:MenuSlice,
         TableStore:TableSlice,
-        ReviewStore:ReviewSlice
+        ReviewStore:ReviewSlice,
+        AuthStore:AuthSlice
     }
 })

@@ -2,6 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from '../pages/client/HomePage'
 import Loader from '../components/Loading/Loading'
+import Login from '../Validate/Login'
+import Logout from '../Validate/Logout'
 
 // Lasy load to import the Pages
 const Menu =React.lazy(()=>import('../pages/client/MenuPage'))
@@ -29,6 +31,8 @@ const PageRoutes = () => {
       <Route path='feedback' element={<Review/>} />
       <Route path='orders/:id' element={<OrderDetail/>} />
       <Route path='admin' element={<ManageTable/>} />
+      <Route path='login' element={<Login/>} />
+      <Route path='logout' element={<Logout/>} />
     </Routes>
     </React.Suspense>
   )

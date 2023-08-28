@@ -1,0 +1,21 @@
+.Auth .card{
+    border-radius: 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-flow: column;
+    gap:30px;
+    width:400px;
+    padding: 2rem;
+    border:none;
+    margin-left: 60px;
+}
+.Auth input{
+    width: 350px;
+}
+.Auth{
+    background-image: url(../assets//images/login.png);
+    background-position:20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

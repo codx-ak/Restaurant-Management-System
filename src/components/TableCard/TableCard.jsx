@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form'
 import { Button,FormControl,InputLabel,MenuItem,Select,TextField} from '@mui/material'
 import './booking.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { AddBooking } from '../../Store/TableSlice'
 import { TableFilterByGuest } from '../../API/Table'
@@ -12,12 +12,20 @@ const TableCard = () => {
   const navigate=useNavigate()
   const dispatch=useDispatch()
   const {register,handleSubmit,watch,formState:{errors}}=useForm()
+  const AuthValue=useSelector(state=>state.AuthStore.value)
 
   const onSubmit=(data)=>{
     //calling Table Booking Reducer
-    dispatch(AddBooking(data))
-    //navigate confirmation page
-    navigate('success')
+    if(AuthValue[0]){
+      dispatch(AddBooking(data))
+      //navigate confirmation page
+      navigate('success')
+    }
+    else {
+      alert("Login Now")
+      navigate('/login')
+    }
+    
   }
 
   const GuestCount=watch('guest') || 0

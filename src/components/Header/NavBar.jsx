@@ -17,11 +17,12 @@ import BookOnlineIcon from '@mui/icons-material/BookOnline';
 import ChatIcon from '@mui/icons-material/Chat';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import './nav.css'
-import { Padding } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
+
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const AuthValue=useSelector(state=>state.AuthStore.value)
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -72,7 +73,11 @@ export default function NavBar() {
                 <Link to='/table-overview'><MenuItem onClick={handleClose}><Button startIcon={<TocIcon/>}>Tables</Button></MenuItem></Link>
                 <Link to='/booking'><MenuItem onClick={handleClose}><Button startIcon={<BookOnlineIcon/>}>Bookings</Button></MenuItem></Link>
                 <Link to='/feedback'><MenuItem onClick={handleClose}><Button startIcon={<ChatIcon/>}>Reviews</Button></MenuItem></Link>
-                <Link to='/admin'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Admin</Button></MenuItem></Link>
+                {
+                  !AuthValue[0] ?<Link to='/login'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Login</Button></MenuItem></Link>
+                  : <Link to='/logout'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Logout</Button></MenuItem></Link>
+                }
+                
                 
               </Menu>
             </div>
