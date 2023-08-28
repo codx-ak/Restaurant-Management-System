@@ -22,7 +22,7 @@ const OrderDetail = () => {
     //axios to delete the Booked Table
     dispatch(CancelBooking(data))
     //navigate to home
-    navigate('/home')
+    navigate('/orders')
   }
   return (
     <Box className='OrderDetail' >

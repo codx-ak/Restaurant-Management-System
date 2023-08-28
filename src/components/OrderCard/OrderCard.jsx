@@ -12,7 +12,7 @@ const OrderCard = ({order}) => {
   const onSubmit=(data)=>{
     // Booked Table Cancel With Api
     dispatch(CancelBooking(data))
-    navigate('/home')
+    navigate('/booking')
   }
     return (
     <Card variant='outlined' className='order-card'>

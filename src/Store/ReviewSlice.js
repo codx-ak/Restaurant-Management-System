@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { feedbackPost,feedbackGet } from "../API/feedback";
+import { feedbackPost} from "../API/feedback";
 
 const initialState={
-    value:feedbackGet
+    value:[]
 }
 
 const ReviewSlice=createSlice({
@@ -18,7 +18,7 @@ const ReviewSlice=createSlice({
                 feedback_text:action.payload.message
             }
             feedbackPost(feedback)
-            state.value.push(feedback)
+            alert("Feedback Sent Successfully")
         }
     }
 })

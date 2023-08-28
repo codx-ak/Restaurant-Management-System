@@ -20,10 +20,11 @@ export const TableFilterById=async(id)=>
         }
 }
 
-export const TableFilterByGuest=async()=>{
+export const TableFilterByGuest=async(guest)=>{
     try{
-    const response=api.get("/api/tables?status=Available")
-    return response.data
+    const response=await api.get("/api/tables?status=Available")
+    let Filter=response.data.filter(data=>data.seating_capacity >= guest)
+    return Filter
     }
     catch(err) {
         console.log(err);

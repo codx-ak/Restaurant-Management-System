@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import ReviewCard from '../../components/Review/ReviewCard'
 import { Box, Container, Typography } from '@mui/material'
 import Reviews from '../../components/Review/Reviews'
-import { useSelector } from 'react-redux'
+import { feedbackGet } from '../../API/feedback'
 const ReviewPage = () => {
-  const reviews=useSelector(state=>state.ReviewStore.value)
+  const [reviews,setReviews]=useState([])
+  useEffect(()=>{
+    feedbackGet().then(res=>setReviews(res))
+  },[])
   return (
     <Box>
       <Typography className='first-title' variant='h6'>Review</Typography>

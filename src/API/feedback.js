@@ -1,8 +1,14 @@
 import api from './api'
 
-export const feedbackGet= await api.get("/api/feedback")
-    .then((msg)=>msg.data)
-    .catch(e=>console.log(e))
+export const feedbackGet=async()=>{
+    try{
+    const response=await api.get("/api/feedback")
+    return response.data
+    }
+    catch(err) {
+        console.log(err);
+        }
+}
 
 export const feedbackPost=async(data)=>{
     await api.post("/api/feedback",data,{headers:{

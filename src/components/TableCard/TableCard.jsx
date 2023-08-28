@@ -21,10 +21,10 @@ const TableCard = () => {
   }
 
   const GuestCount=watch('guest') || 0
+
   useEffect(()=>{
-    //updating Tables 
-    const Result=TableFilterByGuest.filter(table=>table.seating_capacity >= GuestCount)
-  setTables(Result)
+    //updating Tables
+    TableFilterByGuest(GuestCount).then(value=>setTables(value))
   },[GuestCount])
 
   return (

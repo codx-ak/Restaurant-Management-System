@@ -28,6 +28,7 @@ const TableSlice=createSlice({
         },
         CancelBooking:(state,action)=>{
             TableBookingCancel(action.payload,{reservation:{},status:"Available"})
+            alert("Table Booking Cancelled")
         }
     }
 })
