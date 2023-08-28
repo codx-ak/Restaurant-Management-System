@@ -21,7 +21,7 @@ const TableCard = ({Booking}) => {
                         <TableCell align='center'>{data.table_no}</TableCell>
                         <TableCell align='center'>{data.reservation.Order}</TableCell>
                         <TableCell align='center' >{data.reservation.name}</TableCell>
-                        <TableCell align='center'><Link to=''><Button variant='contained'>view</Button></Link></TableCell>
+                        <TableCell align='center'><Link to={`table/${data.table_no}`}><Button variant='contained'>view</Button></Link></TableCell>
                         </TableRow>)})
                     
             }

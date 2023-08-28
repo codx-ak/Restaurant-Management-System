@@ -1,0 +1,28 @@
+.Table-Detail{
+    height: fit-content;
+    margin-bottom: 30px;
+    background-image: url(../../assets/images/table.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:80%;
+    background-position-y: 100px;
+    padding: 20px; 
+}
+.table-detail-card{
+    border-radius: 15px;
+    padding:30px;
+    width: 250px;
+}
+.table-detail-card p:last-child{
+    border:none
+}
+.table-detail-card button{
+    width: 250px;
+    margin: 5px;
+    margin-top: 10px;
+}
+.Table-Detail p{
+    color: gray;
+    padding:10px;
+    border-bottom: 1px dotted rgba(211, 211, 211, 0.726);
+}

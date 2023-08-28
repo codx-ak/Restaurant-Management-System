@@ -117,5 +117,17 @@ img{
 .comment-text{
   display: block !important;
 }
+.Auth{
+  background-image: none !important; 
+}
+.Auth .card{
+  border: 1px solid lightgrey !important;
+  width: auto !important;
+  margin-left: 0 !important;
+  padding: 1rem !important;
+}
+.Auth input {
+  width: 300px !important;
+}
 
 }

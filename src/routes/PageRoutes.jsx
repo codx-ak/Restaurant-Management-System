@@ -4,6 +4,7 @@ import HomePage from '../pages/client/HomePage'
 import Loader from '../components/Loading/Loading'
 import Login from '../Validate/Login'
 import Logout from '../Validate/Logout'
+import TableDetails from '../pages/admin/TableDetails'
 
 // Lasy load to import the Pages
 const Menu =React.lazy(()=>import('../pages/client/MenuPage'))
@@ -31,6 +32,7 @@ const PageRoutes = () => {
       <Route path='feedback' element={<Review/>} />
       <Route path='orders/:id' element={<OrderDetail/>} />
       <Route path='admin' element={<ManageTable/>} />
+      <Route path='admin/table/:id' element={<TableDetails/>} />
       <Route path='login' element={<Login/>} />
       <Route path='logout' element={<Logout/>} />
     </Routes>
