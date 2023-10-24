@@ -8,14 +8,13 @@
     width:400px;
     padding: 2rem;
     border:none;
-    margin-left: 60px;
+    margin-left: 50%;
 }
 .Auth input{
     width: 350px;
 }
 .Auth{
-    background-image: url(../assets//images/login.png);
-    background-position:20px;
+    background-image: url(../assets/images/login.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
