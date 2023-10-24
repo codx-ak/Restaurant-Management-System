@@ -4,7 +4,7 @@ import React from 'react'
 const MenuItem = ({item}) => {
   return (
     <Card variant='outlined' sx={{borderRadius:'15px'}} className='MenuSingleCard'>
-      <img src={item.image} alt="Menu Image" loading='lazy'/>
+      <img src={item.image} alt={item.name} loading='lazy'/>
       <Typography component='div' variant='h6'>{item.name}</Typography>
       <Rating value={4.5} precision={0.5} size='small'/>
       <Typography component='p'>{item.description}</Typography>
