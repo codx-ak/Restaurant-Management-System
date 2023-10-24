@@ -61,7 +61,7 @@ img{
   width: auto !important;
 }
 .orders {
-  background-size: auto !important;
+  background-size: cover !important;
 }
 .ReviewPage {
   flex-direction: column-reverse;
