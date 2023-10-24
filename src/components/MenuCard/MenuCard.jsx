@@ -11,7 +11,7 @@ const MenuCard = ({MenuItem}) => {
         MenuItem.items && MenuItem.items.map((item,index)=>{
           return(
             <div key={index} className='Menu-Item'>
-            <img src={item.image} srcSet={item.image} alt=""/>
+            <img src={item.image} srcSet={item.image} alt={item.item_name}/>
             <Box sx={{width:'70%'}}>
             <Typography variant='h6' className='Menu-Title' component='p'>{item.item_name}</Typography>
             <Typography sx={{color:'gray',marginTop:1,textAlign:'left'}} component='p'>{item.description}</Typography>

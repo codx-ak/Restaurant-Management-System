@@ -25,7 +25,7 @@ const TableLayout = ({table}) => {
                     return (
                         <TableRow key={index} hover  tabIndex={-1}>
                         <TableCell align='center'>{Table.table_no}</TableCell>
-                        <TableCell align='center' sx={{color:Table.status=='Available'?'green':'red'}} >{Table.status}</TableCell>
+                        <TableCell align='center' sx={{color:Table.status==='Available'?'green':'red'}} >{Table.status}</TableCell>
                         <TableCell align='center'><Link to={`${Table.table_no}`}><Button variant='contained'>view</Button></Link></TableCell>
                         </TableRow>
                     )
