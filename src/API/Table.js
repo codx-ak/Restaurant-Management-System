@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import api from './api'
 
 //getting All Table deta with get method
@@ -7,7 +8,7 @@ export const TableData=async()=>{
     return response.data
     }
     catch(err) {
-        console.log(err);
+        toast.error("Somthing Wrong!")
         }
 }
 
@@ -18,7 +19,7 @@ export const TableFilterById=async(id)=>
     return response.data
         }
     catch(err) {
-        console.log(err);
+        toast.error("Somthing Wrong!")
         }
 }
 
@@ -30,7 +31,7 @@ export const TableFilterByGuest=async(guest)=>{
     return Filter
     }
     catch(err) {
-        console.log(err);
+        toast.error("Somthing Wrong!")
         }
 }
 
@@ -41,12 +42,12 @@ export const TableFilterByStatus=async()=>{
     return response.data
     }
     catch(err) {
-        console.log(err);
+        toast.error("Somthing Wrong!")
         }
 }
 
 //update the table Data
-export const TableBooking=async(id,data)=>{
+export const BookingUpdate=async({id,data})=>{
     try{
     const response=await api.patch(("/api/tables/"+id),data,
         {headers:{
@@ -55,25 +56,9 @@ export const TableBooking=async(id,data)=>{
         return response.data
     }
     catch(err){
-        console.log(err)
+        toast.error("Somthing Wrong!")
     }
     
 } 
 
-
-export const TableBookingCancel=async(id,data)=>{
-    try{
-    const response=await api.patch("/api/tables/"+id,data,
-    {headers:{
-        'Accept':'application/json',
-        'Content-Type':'application/json'}})
-        return response.data
-    }
-    catch(err){
-        console.log(err)
-    }
-    
-    
-} 
-    
     
