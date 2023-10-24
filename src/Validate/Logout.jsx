@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { AuthLogout } from '../Store/AuthSlice'
+import React, { useContext, useEffect } from "react";
+import { Authenticate } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Logout = () => {
-    const navigate=useNavigate()
-    const dispatch=useDispatch()
-    useEffect(()=>{
-      //calling logout funtions
-        dispatch(AuthLogout())
-        //navigate home page
-        navigate('/')
-    })
-  return
-}
+  //auth function and page navigate to home page
+  const { setAuth } = useContext(Authenticate);
+  const navigate = useNavigate();
+  useEffect(() => {
+    setAuth(false);
+    toast.success("Logout Successfully!");
+    navigate("/");
+  });
+  return <></>;
+};
 
-export default Logout
+export default Logout;
