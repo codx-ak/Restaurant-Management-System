@@ -1,43 +1,82 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import {useForm} from 'react-hook-form'
 import { Button,FormControl,InputLabel,MenuItem,Select,TextField} from '@mui/material'
 import './booking.css'
-import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { AddBooking } from '../../Store/TableSlice'
-import { TableFilterByGuest } from '../../API/Table'
+import { BookingUpdate,  TableData, TableFilterByGuest } from '../../API/Table'
+import {Authenticate} from '../../Validate/AuthContext'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import Loader from '../Loading/Loading'
+import { toast } from 'react-toastify'
 
 const TableCard = () => {
-  const [Tables,setTables]=useState([])
+  const { IsAuth } = useContext(Authenticate);
   const navigate=useNavigate()
-  const dispatch=useDispatch()
-  const {register,handleSubmit,watch,formState:{errors}}=useForm()
-  //authentication value
-  const AuthValue=useSelector(state=>state.AuthStore.value)
+  const {register,handleSubmit, formState:{errors}}=useForm()
+  
+  const queryClient = useQueryClient();
+  const { isLoading, data} = useQuery({
+    queryKey: ["booking"],
+    queryFn: TableData,
+  });
+
+  const { mutateAsync: addbookingMutation } = useMutation({
+    mutationFn: BookingUpdate,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["booking"]);
+      toast.success("Table Booked");
+    },
+  });
+
+  const { mutateAsync: guestcountMutation } = useMutation({
+    mutationFn: TableFilterByGuest,
+    onSuccess: (data) => {
+      queryClient.setQueriesData(["booking"],data);
+    },
+  });
 
   const onSubmit=(data)=>{
     //checking authentication
-    if(AuthValue[0]){
+    if(IsAuth){
       //calling Table Store to update booking
-      dispatch(AddBooking(data))
-      //navigate confirmation page
-      navigate('success')
+      
+      let today = new Date().toISOString().slice(0, 10)
+      // Order ID Generate
+      var orderId = "Ak" + Math.random().toString(16).slice(2)
+
+      const OrderModel={
+        reservation:{
+          Order:orderId,
+          Table:data.table,
+          name:data.name,
+          email:data.email,
+          mobile:data.mobile,
+          checkIn:data.checkin,
+          time:data.time,
+          guest:data.guest,
+          booked:today
+        },
+        status:'Booked'
+      }
+
+      addbookingMutation({id:data.table,data:OrderModel})
+      navigate('/orders')
     }
     else {
       //redirect login page
-      alert("Login Now")
+      toast.success("Login Now");
       navigate('/login')
     }
     
   }
 
-  const GuestCount=watch('guest') || 0
+  const Tables=data || []
+  if (isLoading) return <Loader />;
 
-  useEffect(()=>{
-    //updating Tables
-    TableFilterByGuest(GuestCount).then(value=>setTables(value))
-  },[GuestCount])
-
+  function GuestCountChange(e){
+    guestcountMutation(e.target.value)
+  }
+ 
   return (
     <div className="BookingForm">
       <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
@@ -88,6 +127,7 @@ const TableCard = () => {
           label="Guest"
           error={errors.guest ? true :false} 
           color="success"
+          onChange={GuestCountChange}
           defaultValue=''
           >
           <MenuItem disabled value=''></MenuItem>
@@ -112,7 +152,7 @@ const TableCard = () => {
           >
             <MenuItem disabled value=''></MenuItem>
             {
-              Tables.length && Tables.map((table,index)=><MenuItem key={index} value={table.table_no}>{table.table_no}</MenuItem>)
+              Tables && Tables.map((table,index)=><MenuItem key={index} value={table.table_no}>{table.table_no}</MenuItem>)
             }
         </Select>
         </FormControl>

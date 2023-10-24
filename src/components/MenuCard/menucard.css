@@ -72,6 +72,7 @@
    color: white;
    padding: 10px;
    z-index: 5;
+   font-size: 14px;
 }
 .card-price::after{
     content: "";

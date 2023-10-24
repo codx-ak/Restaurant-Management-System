@@ -3,11 +3,10 @@ import React from 'react'
 import MenuCard from './MenuCard'
 
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux/es/hooks/useSelector'
+import {sampleMenu} from '../../DB/MenuDB'
 
 const Menu = () => {
-  //getting Menu Data from MenuStore
-  const MenuData=useSelector(state=>state.MenuStore.value.sampleMenu)
+  
   return (
     <Box id='Menu'>
     <Typography className='first-title' variant='h6'>Specialties</Typography>
@@ -15,7 +14,7 @@ const Menu = () => {
     <Box className="menu-container">
     {
       // Home Page Menu Mapping
-      MenuData.length ? MenuData.map((item,index)=><MenuCard key={index} MenuItem={item}/>) : <Typography component='p'> No Items</Typography>
+      sampleMenu.length ? sampleMenu.map((item,index)=><MenuCard key={index} MenuItem={item}/>) : <Typography component='p'> No Items</Typography>
     }
     </Box>
     <Typography sx={{textAlign:'center',padding:5}}>

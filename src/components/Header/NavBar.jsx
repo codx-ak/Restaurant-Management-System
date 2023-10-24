@@ -14,17 +14,16 @@ import HomeIcon from '@mui/icons-material/Home';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import TocIcon from '@mui/icons-material/Toc';
 import BookOnlineIcon from '@mui/icons-material/BookOnline';
-import ChatIcon from '@mui/icons-material/Chat';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import './nav.css'
-import { useSelector } from 'react-redux';
+import { Authenticate } from '../../Validate/AuthContext';
 
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  //Authentication Checking
-  const AuthValue=useSelector(state=>state.AuthStore.value)
-  
+  //auth value checking
+  const { IsAuth } = React.useContext(Authenticate);
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -41,8 +40,8 @@ export default function NavBar() {
             Codx.
           </Typography>
             <div>
-            <Badge color="secondary" variant="dot">
-                <Link to='/orders'><LocalMallIcon color="primary"/></Link>
+            <Badge color="warning" variant="dot">
+                <Link to='/orders'><LocalMallIcon color="error"/></Link>
             </Badge>
               <IconButton
                 size="large"
@@ -50,7 +49,7 @@ export default function NavBar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
-                color="primary"
+                color="error"
                 sx={{margin:'0 15px'}}
               >
                 <WidgetsIcon />
@@ -74,10 +73,9 @@ export default function NavBar() {
                 <Link to='/menu'><MenuItem onClick={handleClose}><Button startIcon={<RestaurantMenuIcon/>}>Menu</Button></MenuItem></Link>
                 <Link to='/table-overview'><MenuItem onClick={handleClose}><Button startIcon={<TocIcon/>}>Tables</Button></MenuItem></Link>
                 <Link to='/booking'><MenuItem onClick={handleClose}><Button startIcon={<BookOnlineIcon/>}>Bookings</Button></MenuItem></Link>
-                <Link to='/feedback'><MenuItem onClick={handleClose}><Button startIcon={<ChatIcon/>}>Reviews</Button></MenuItem></Link>
                 {
-                  !AuthValue[0] ?<Link to='/login'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Login</Button></MenuItem></Link>
-                  : <Link to='/logout'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Logout</Button></MenuItem></Link>
+                  IsAuth ?<Link to='/logout'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Logout</Button></MenuItem></Link>
+                  : <Link to='/login'><MenuItem onClick={handleClose}><Button startIcon={<AdminPanelSettingsIcon/>}>Login</Button></MenuItem></Link>
                 }
                 
                 

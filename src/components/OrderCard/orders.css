@@ -13,12 +13,11 @@
 }
 
 .orders{
-    min-height: 80vh;
-    overflow-y: scroll;
+    min-height: 82vh;
     margin-top: 20px;
     background-image: url(../../assets/images/bg.png);
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position-y:50px ;
     background-size:contain;
 }
 .orders-container{
